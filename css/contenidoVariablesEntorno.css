@@ -18,6 +18,9 @@
         width: 3em;
         
 }
+label.form-label{
+        font-weight: bold;
+}
     
 
     .btn-Limpiar {
