@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componente Modal</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fawesome-all.css">
+    <link rel="stylesheet" href="css/contenidoVariablesEntorno.css">
+    <link rel="stylesheet" href="css/SiteNew.css">
+    <link rel="stylesheet" href="css/estilosTabs.css">
+</head>
+
+<body class="bg-ambulatorio">
+    <header class="mbot justify-content-between sticky-top ps-0 ms-0" style="">
+        <span class="col-12 h2 text-white d-grid text-center align-self-center">NAV MARKEY</span>
+    </header>
+    <section class="dvToolBarPacienteContainer row" tabindex="3333;">
+        <span class="col-12 h2 text-secondary d-grid text-center align-self-center">AREA FIJA DE USO MULTIPLE</span>
+    </section>
+    <main class="container-fluid">
+        <div class="row">
+            <!-- -----contenido de la barra lateral----- -->
+            <div class="col-2 h-100 d-grid text-center align-self-center">
+                <span class="col-12 h2 text-secondary d-grid text-center align-self-center">Menú Lateral</span>
+            </div>
+            <!-------contenido principal----- -->
+            <div class="col-10 bg-white overflow-y-auto" style="height: calc(100vh - 150px);">
+                <!-- ------disparador del modal------ -->
+                <section class="row p-2">
+                    <button class="btn btn-primary float-start w-auto" data-bs-toggle="modal"
+                        data-bs-target="#nuevoModal">MODAL
+                        TRIGGER</button>
+                </section>
+                <hr>
+                <!-- -------tabs de ejemplo------- -->
+                <div class="row">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                                type="button" role="tab" aria-controls="home" aria-selected="true">
+                                Pestaña 1
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                                type="button" role="tab" aria-controls="profile" aria-selected="false">
+                                Pestaña 2
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages"
+                                type="button" role="tab" aria-controls="messages" aria-selected="false">
+                                Pestaña 3
+                            </button>
+                        </li>
+                    </ul>
+    
+                    <!-- Tab panes -->
+                    <div class="tab-content pt-2">
+                        <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h2 class="h2">1.- Contenido de la pestaña 1</h2>
+                            <p>Texto de ejemplo para la pestaña 1</p>   
+                        </div>
+                        <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <h2>2.- Contenido de la pestaña 2</h2>
+                            <p>Texto de ejemplo para la pestaña 2</p>
+                        </div>
+                        <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+                            <h2>3.- Contenido de la pestaña 3</h2>
+                            <p>Texto de ejemplo para la pestaña 3</p>
+                        </div>
+                      
+                    </div>
+    
+                </div>
+
+            </div>
+             </div>
+    </main>
+    <!-- ---------- modal de ejemplo---------- -->
+    <!-- @*---- Copiar y pegar el contenido donde corresponda --------*@
+
+@*---en el caso que se quiera permitir cerrar la ventana clickeando fuera del
+    popup, remover data-bs-backdrop="static"--*@ -->
+    <div class="modal fade" tabindex="-1" id="nuevoModal" data-bs-keyboard="false" aria-hidden="true">
+        <!-- @*
+        --en el siguiente contenedor concatenar la clase  .modal-md si el contenido
+        --va a ser un párrafo extenso, o formularios medianos.
+        --Para contenidos con tablas de varias columnas, utilizar la clase .modal-lg
+        --en otros casos no agregar clases
+        -- para contenidos extensos agregar .modal-dialog-scrollable
+        -- para mensajes de error o similares utilizar modal-dialog-centered----*@-->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- @*---el titulo del modal no puede ser distinto a H5---
+                    --- el texto será convertido mediante css a MAYÚSCULAS----*@ -->
+                    <h5 class="modal-title">Título Modal</h5>
+                    <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Subtítulo Modal</h5>
+                    <p>CUERPO MODAL</p>
+                </div>
+
+                <!-- @*---los botones de acción estarán ubicados SIEMPRE a la derecha en la sección footer---
+                ---Los botones deben ir acompañados por un icono de FontAwesome---
+                --- el botón de acción más importante será el último de la lista y será
+                mostrado a la derecha del footer---
+                --- si se utilizan más de 4 botones de acción, agregar al
+                div.modal-dialog la clase .modal-md----*@ -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><span
+                            class="fa fa-trash me-2"></span>Descartar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span
+                            class="fa fa-xmark-circle me-2"></span>Cancelar</button>
+                    <button type="button" class="btn btn-primary"><span
+                            class="fa fa-check-circle me-2"></span>Aceptar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <footer class="futer">© 2025 - Salud - Markey Healthcare Solutions | Versión: 0.5.1.3 - HOSPITAL UNIVERSITARIO
+        AUSTRAL - piso uno</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

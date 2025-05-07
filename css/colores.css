@@ -1,0 +1,243 @@
+:root {
+    --linearPrimarySecondary: linear-gradient(#2a3792, #eaf1fb);
+    --linearPrimaryAccent: linear-gradient(#2a3792, #f59b5b);
+    --linearSecondaryAccent: linear-gradient(#eaf1fb, #f59b5b);
+    --radialPrimarySecondary: radial-gradient(#2a3792, #eaf1fb);
+    --radialPrimaryAccent: radial-gradient(#2a3792, #f59b5b);
+    --radialSecondaryAccent: radial-gradient(#eaf1fb, #f59b5b);
+    --fondo-claro: #EAF1FB;
+    --primarioAustral: #3a73cb;
+    --hoverAustral: #0361bf;
+    --text: #ffffff;
+    --background: #080808;
+    --primary: #2a3792;
+    --secondary: #3a73cb;
+    --accent: #f59b5b;
+    --primary-emer: #c23a3c !important;
+    --secondary-emer: #a44e4f !important;
+    --hover-emer: #D06263bb !important;
+    --light-emer: #FFE5E6 !important;
+    --bg-emer: #ffeeef !important;
+    --primary-inter: #25B431 !important;
+    --hover-inter: #70BC76 !important;
+    --bg-inter: #D2EBD4 !important;
+    /*-----shades de colores primarios, secundarios y acentos-----*/
+    --text-50: #f2f2f2;
+    --text-100: #e6e6e6;
+    --text-200: #cccccc;
+    --text-300: #b3b3b3;
+    --text-400: #999999;
+    --text-500: #808080;
+    --text-600: #666666;
+    --text-700: #4d4d4d;
+    --text-800: #333333;
+    --text-900: #1a1a1a;
+    --text-950: #0d0d0d;
+    --background-50: #eaf1fb;
+    --background-100: #d4e3f7;
+    --background-200: #a9c6ef;
+    --background-300: #7eaae7;
+    --background-400: #548dde;
+    --background-500: #2971d6;
+    --background-600: #215aab;
+    --background-700: #184481;
+    --background-800: #102d56;
+    --background-900: #08172b;
+    --background-950: #040b15;
+    --primary-50: #ebedf9;
+    --primary-100: #d7dbf4;
+    --primary-200: #b0b6e8;
+    --primary-300: #8892dd;
+    --primary-400: #616ed1;
+    --primary-500: #394ac6;
+    --primary-600: #2e3b9e;
+    --primary-bg-: #2A3792;
+    --primary-700: #222c77;
+    --primary-800: #171d4f;
+    --primary-900: #0b0f28;
+    --primary-950: #060714;
+    --secondary-50: #ebf1fa;
+    --secondary-100: #d7e3f4;
+    --secondary-200: #aec6ea;
+    --secondary-300: #86aadf;
+    --secondary-400: #5e8dd4;
+    --secondary-500: #3a73cb;
+    --secondary-600: #2b5aa1;
+    --secondary-700: #204479;
+    --secondary-800: #152d51;
+    --secondary-900: #0b1728;
+    --secondary-950: #050b14;
+    /* --secondary-50: #f2f2f2;
+    --secondary-100: #e6e6e6;
+    --secondary-200: #cccccc;
+    --secondary-300: #b3b3b3;
+    --secondary-400: #999999;
+    --secondary-500: #808080;
+    --secondary-600: #666666;
+    --secondary-700: #4d4d4d;
+    --secondary-800: #333333;
+    --secondary-900: #1a1a1a;
+    --secondary-950: #0d0d0d;*/
+
+    --accent-50: #fef0e7;
+    --accent-100: #fce2cf;
+    --accent-200: #f9c49f;
+    --accent-300: #f7a76e;
+    --accent-400: #f48a3e;
+    --accent-500: #f16d0e;
+    --accent-600: #c1570b;
+    --accent-700: #914108;
+    --accent-800: #602b06;
+    --accent-900: #301603;
+    --accent-950: #180b01;
+}
+.bg-ambulatorio {
+    background-color: var(--fondo-claro);
+}
+.bg-emer{
+    background-color:var(--bg-emer);
+}
+.bg-internacion {
+    background-color: var(--bg-inter);
+}
+
+
+.modal .btn.btn-secondary, .btn-secondary, .form-group .btn-secondary {
+    color: var(--secondary-100) !important;
+    --bs-btn-color: var(--secondary-100) !important;
+    --bs-btn-bg: var(--secondary-500) !important;
+    --bs-btn-border-color: var(--secondary-200)!important;
+    --bs-btn-hover-color: var(--secondary-100)!important;
+    --bs-btn-hover-bg: var(--hoverAustral)!important;
+    --bs-btn-hover-border-color: var(--secondary-950)!important;
+    --bs-btn-focus-shadow-rgb: 130, 138, 145!important;
+    --bs-btn-active-color: var(--secondary-100) !important;
+    --bs-btn-active-bg: var(--secondary-500) !important;
+    --bs-btn-active-border-color: #5d7488!important;
+    --bs-btn-active-shadow: inset 0 3px 5px var(--secondary-700)!important;
+    --bs-btn-disabled-color: var(--secondary-400) !important;
+    --bs-btn-disabled-bg: var(--background-300) !important;
+    --bs-btn-disabled-border-color: var(--background-700)!important;
+}
+
+
+.btn-primary, .btn.btn-primary, .form-group .btn-primary, .btn-Search{
+    --bs-btn-color: var(--primary-100) !important;
+    --bs-btn-bg: var(--primary-600) !important;
+    --bs-btn-border-color: var(--primary-200)!important;
+    --bs-btn-hover-color: var(--primary-100)!important;
+    --bs-btn-hover-bg: var(--primary-700)!important;
+    --bs-btn-hover-border-color: var(--primary-950)!important;
+    --bs-btn-focus-shadow-rgb: 130, 138, 145!important;
+    --bs-btn-active-color: var(--primary-100)!important;
+    --bs-btn-active-bg: var(--primary-500)!important;
+    --bs-btn-active-border-color: #5d7488;
+    --bs-btn-active-shadow: inset 0 3px 5px var(--primary-700)!important;
+    --bs-btn-disabled-color: var(--primary-100)!important;
+    --bs-btn-disabled-bg: var(--background-500)!important;
+    --bs-btn-disabled-border-color: var(--background-700)!important;
+}
+
+.btn-outline-primary {
+      border: inset solid 1px!important;
+    --bs-btn-color: var(--primary-bg-) !important;
+    --bs-btn-bg: var(--primary-50) !important;
+    --bs-btn-border-color: var(--primary-600);
+    --bs-btn-hover-color: var(--primary-600);
+    --bs-btn-hover-bg: var(--primary-100);
+    --bs-btn-hover-border-color: var(--primary-600);
+    --bs-btn-focus-shadow-rgb: 130, 138, 145;
+    --bs-btn-active-color: var(--primary-bg-);
+    --bs-btn-active-bg: var(--primary-300);
+    --bs-btn-active-border-color: var(--primary-bg-);
+    --bs-btn-active-shadow: inset 0 3px 5px var(--primary-700);
+    --bs-btn-disabled-color: var(--primary-300);
+    --bs-btn-disabled-bg: var(--background-100);
+    --bs-btn-disabled-border-color: var(--background-300);
+}
+
+.fc .fc-today-button.fc-button-primary {
+    color: var(--secondary-100) !important;
+    background-color: var(--secondary-500) !important;
+    border-color: var(--secondary-200) !important;
+}
+
+.fc .fc-button-primary {
+    border: solid 1px !important;
+    color: var(--primary-bg-) !important;
+    background-color: var(--primary-50) !important;
+    border-color: var(--primary-600);
+}
+
+.fc .fc-button-active {
+    border: solid 1px !important;
+    color: var(--primary-50) !important;
+    background-color: var(--primary-600) !important;
+    border-color: var(--primary-600)!important;
+}
+
+.fc-button:hover {
+    color: var(--primary-50) !important;
+    background-color: var(--primary-500) !important;
+    border-color: var(--primary-600) !important;
+    border: solid 1px !important;
+    box-shadow: 0 0 10px -3px var(--primary-950)
+}
+
+.pendiente {
+    color: #b5c1f6;
+}
+
+.cancelado {
+    color: #e84a89;
+}
+
+.ausente {
+    color: #dc3545;
+}
+
+.presente {
+    color: #9cd663;
+}
+
+.reservado {
+    color: #ec9118;
+}
+
+.confirmado {
+    color: #c4bcbc;
+}
+
+.reprogramado {
+    color: #19e250;
+}
+
+.ausente-ca {
+    color: #eafd36;
+}
+
+.eliminado {
+    color: #b06bf6;
+}
+
+.a-reprogramar {
+    color: #FDCD65;
+}
+
+.pago-vencido {
+    color: #fd9336;
+}
+
+.se-retira {
+    color: #ebc315;
+}
+
+.bg-insti-claro {
+    background-color: var(--fondo-claro);
+}
+.bg-insti-oscuro {
+    background-color: var(--primary);
+}
+.badge-primary {
+    background-color: var(--primary-600);
+}

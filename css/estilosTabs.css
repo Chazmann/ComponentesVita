@@ -1,0 +1,27 @@
+@import url('../colores.css');
+
+.tabs {
+    border-bottom: solid 2px var(--primary);
+
+}
+
+.nav-link {
+    border-radius: .75em .75em 0 0;
+    border: solid 1px var(--primary-200) !important;
+    border-bottom: 0;
+    color: var(--primary-400);
+    text-transform: uppercase;
+}
+
+.nav-link.active {
+    background-color: var(--primary) !important;
+    color: white !important;
+    font-weight: 700;
+}
+
+.nav-link:hover {
+    background-color: var(--primary-100);
+    color: var(--primary-600);
+    box-shadow: 0 -5px 12px var(--primary-100);
+    border-bottom: 0;
+}

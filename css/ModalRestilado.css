@@ -1,0 +1,76 @@
+
+:root {
+
+    --header-gradient: linear-gradient(90deg, var(--main-bg-color) 60%, var(--main-bg-secondary-color) 100%) !important;
+}
+
+.modal-lg {
+    max-width: 80% !important;
+}
+
+.modal-md {
+    max-width: 60% !important;
+}
+
+
+.modal {
+    backdrop-filter: blur(2px) !important;
+}
+
+.modal-header {
+    padding: 8px 15px !important;
+    box-shadow: 0 0 15px -3px rgba(0, 0, 0, 0.583);
+    margin-bottom: -10px !important;
+    background: var(--header-gradient);
+}
+
+.modal-header h5 {
+    font-size: 12pt !important;
+}
+
+.modal-title {
+    position: relative;
+    left: 30px;
+    font-family: var(--heading);
+    font-size: 1.6em;
+    color: var(--main-text-color) !important;
+}
+
+.modal-title::before {
+    position: absolute;
+    left: -35px;
+    content: '';
+    background-image: url(../Images/iso_white.png);
+    background-position: center;
+    background-size: cover;
+    opacity: .5;
+    height: 30px !important;
+    width: 30px !important;
+    font-family: var(--fira);
+    font-weight: 700 !important;
+}
+
+.modal-content {
+    max-width: 85%;
+    margin: auto;
+    box-sizing: border-box;
+    font-family: var(--body-text);
+    font-size: .85em;
+}
+
+.modal-body, .modal-footer button, .modal-header .close, .dropdown-borradores .btn {
+    font-size: 0.98em !important;
+}
+
+.nav-options-hc span, .dropdown-borradores .btn {
+    font-size: 0.88em !important;
+}
+
+.dropdown-borradores {
+    font-family: var(--body-text);
+}
+
+.dropdown-borradores h6 {
+    font-size: 10pt !important;
+}
+

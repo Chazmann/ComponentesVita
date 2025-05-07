@@ -1,0 +1,175 @@
+
+:root {
+    --main-bg-color: #2D3492;
+    --main-text-color: #eef3f6;
+    --main-bg-secondary-color: #eef3f6;
+    }
+
+    .turnoCA {
+    background-color:  !important;
+    }
+
+    .turnoAC {
+    background-color:  !important;
+    }
+
+    .turnoEL {
+    background-color:  !important;
+    }
+
+    
+    .fila-sel-popup {
+    background-color: rgba(68, 157, 68, 0.74) !important
+    }
+
+
+
+
+    
+
+    
+
+    .btn-Limpiar {
+    background-color: rgba(255, 106, 0, 0.63) !important;
+    color:#ffffff !important;
+    border-color: rgba(255, 106, 0, 0.63) !important;
+    }
+
+        
+            .btn-Grabar {
+            background-color: #fff !important;
+            color:#212529 !important;
+            border-color: #ced4da !important;
+            }
+        
+    
+
+
+    .nav-markey .dropdown-toggle {
+    color: #eef3f6 !important;
+    }
+
+    .nav-markey .table{
+    color: #eef3f6 !important;
+    }
+
+    
+    .nav-markey .navbar-toggler {
+    
+    color:  !important;
+    border-color:  !important
+    }
+
+    .nav-markey .dropdown-item {
+    color: #eef3f6 !important;
+    }
+
+    .nav-markey .nav-link {
+    color: #eef3f6 !important;
+    text-align:center;
+    text-wrap: balance;
+    }
+
+
+
+    .nav-markey {
+    background-color: #2D3492 !important
+
+    }
+
+    .nav-markey label {
+    color: #eef3f6 !important
+    }
+
+    .nav-markey-leter {
+    color: #eef3f6 !important
+    }
+    .nav-markey .dropdown-menu {
+    background-color: #2D3492 !important
+    }
+
+    .nav-markey a.dropdown-item:hover {
+    color: #202f68 !important
+    }
+
+    .nav-markey .dropdown-item:hover {
+    background-color:  !important
+    }
+
+    .nav-markey .dropdown-toggle:hover {
+    background-color: #2D3492 !important
+    }
+
+    
+
+    #navigation {
+    background-color: #33cc99 !important;
+    }
+
+    #navigation .nav-link  {
+    color: #eef3f6 !important;
+    }
+
+    #navigation .nav-link:hover{
+    color: #5f5f5f !important;
+    background-color: white !important;
+    }
+
+    #navHC {
+    background-color: #33cc99 !important;
+    }
+
+    #navHC .nav-link  {
+    color: #eef3f6 !important;
+    }
+
+    #navHC .nav-link:hover{
+    color: #5f5f5f !important;
+    background-color: white !important;
+    }
+
+    body {
+    background-color: ;
+    color:;
+    }
+
+    .card{
+    background-color: ;
+    border-color: ;
+    }
+
+    hr {
+    
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+    color:  !important;
+    }
+
+
+    .table > thead {
+    background-color:  ;
+    }
+
+    .table-hover > tbody > tr:hover {
+    background-color:  !important;
+    }
+
+    .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: ;
+    }
+
+    .table-striped > tbody > tr {
+    background-color: ;
+    }
