@@ -4,26 +4,26 @@
     font-family: 'SofiaSemi';
     font-style: normal;
     font-weight: 1 1000;
-    src: url('/css/fonts/sofia/SofiaSansSemiCondensed-VariableFont_wght.ttf') format('truetype');
+    src: url('./fonts/sofia/SofiaSansSemiCondensed-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'sofiasanscondensed';
     font-style: normal;
     font-weight: 1 1000;
-    src: url('/css/fonts/sofia/sofiasanscondensed-variablefont_wght.ttf') format('truetype');
+    src: url('./fonts/sofia/sofiasanscondensed-variablefont_wght.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'sofiasansextra';
     font-style: normal;
     font-weight: 1 1000;
-    src: url('/css/fonts/sofia/sofiasansextracondensed-variablefont_wght.ttf') format('truetype');
+    src: url('./fonts/sofia/sofiasansextracondensed-variablefont_wght.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'sofiasans';
-    src: url('/css/fonts/sofiasans-variablefont_wght.ttf') format('truetype');
+    src: url('./fonts/sofiasans-variablefont_wght.ttf') format('truetype');
 }
 
 * {
