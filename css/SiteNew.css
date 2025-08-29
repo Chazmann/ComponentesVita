@@ -1,28 +1,28 @@
-@import url('colores.css');
+@import url('./colores.css');
 @font-face {
     font-family: 'SofiaSemi';
     font-style: normal;
     font-weight: 1 1000;
-    src: url('fonts/sofia/sofiasanssemicondensed-variablefont_wght.ttf') format('truetype');
+    src: url('./fonts/sofia/sofiasanssemicondensed-variablefont_wght.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'sofiasanscondensed';
     font-style: normal;
     font-weight: 1 1000;
-    src: url('fonts/sofia/sofiasanscondensed-variablefont_wght.ttf') format('truetype');
+    src: url('./fonts/sofia/sofiasanscondensed-variablefont_wght.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'sofiasansextra';
     font-style: normal;
     font-weight: 1 1000;
-    src: url('fonts/sofia/sofiasansextracondensed-variablefont_wght.ttf') format('truetype');
+    src: url('./fonts/sofia/sofiasansextracondensed-variablefont_wght.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'sofiasans';
-    src: url('fonts/sofiasans-variablefont_wght.ttf') format('truetype');
+    src: url('./fonts/sofiasans-variablefont_wght.ttf') format('truetype');
 }
 
 * {
