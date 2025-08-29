@@ -273,12 +273,12 @@ function initGraficosSignosVitales() {
         const data2 = registrosParaGrafico.map(r => param2 === "PA" ? extraerSistolica(r.signos_vitales[param2]) : r.signos_vitales[param2]);
 
         graficoContainer.innerHTML = `
-        <article class="card cardRegistroSignosVitales mb-3 col shadow-sm">
+        <article class="card cardRegistroSignosVitales mb-0 col shadow-sm">
             <div class="card-header">
                 <h5 class="card-title mb-0">Comparación: ${nombres[param1]} vs ${nombres[param2]}</h5>
             </div>
-            <div class="card-body">
-                <canvas id="comparativaParametroChart" style="max-height: 250px;"></canvas>
+            <div class="card-body pb-0">
+                <canvas id="comparativaParametroChart" style="max-height: 180px;"></canvas>
             </div>
         </article>`;
 
