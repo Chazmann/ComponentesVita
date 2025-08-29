@@ -241,3 +241,7 @@
 .badge-primary {
     background-color: var(--primary-600);
 }
+.bg-austral{
+    background-color: var(--primarioAustral);
+    color:white;
+}

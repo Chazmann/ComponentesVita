@@ -1,0 +1,302 @@
+<!-- <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fawesome-all.css">
+    <link rel="stylesheet" href="skeleton.css">
+    <link rel="stylesheet" href="css/SiteNew.css"> -->
+    <title>Resumen HC</title>
+
+    <style>
+        #resEstudios .table th {
+            background-color: var(--primarioAustral);
+            color: white;
+        }
+
+        #resEstudios .table td:first-child,
+        #resEstudios .table td:last-child {
+            font-family: 'sofiasanscondensed';
+        }
+        td{
+            vertical-align: middle;
+        }
+    </style>
+
+</head>
+
+<body class="bg-emer p-0" style="overflow: auto!important;">
+
+    <!-- Resumen HC GENERAL WIDGETS
+- EVOLUCIONES -> de emergencia se debe mostrar solo la caratula
+- Estudios -> CPT y estado
+- Antecedentes solo propios y activos
+- Medicacion habitual -> Activa -->
+
+
+
+
+    <div class="container-fluid">
+        <!-- <h1 class="text-center mb-0 bg-austral mb-2 py-3 rounded-3">Resumen HC</h1> -->
+        <div class="row p-3">
+
+            <article class="card p-0 col-md-6  mb-2">
+                <div class="card-header bg-austral ">
+                    <h4 class="mb-0">EVOLUCIONES</h4>
+                </div>
+
+                <div class="card-body" id="resEpisodios">
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control" placeholder="Buscar evolución...">
+                        <button class="btn btn-primary" type="button"><i
+                                class="fa fa-magnifying-glass me-2"></i>Buscar</button>
+                    </div>
+                    <ol class="list-group list-group-numbered gap-1">
+                        <li class="list-group-item d-flex justify-content-between align-items-start bg-danger-subtle">
+                            <div class="ms-2  w-100">
+                                <div class="fw-bold">FRACTURA TOBILLO <span
+                                        class="badge text-bg-warning rounded-pill">Activo</span></div>
+                                <p class="mb-0"><i class="fa fa-user-doctor me-2"></i>Última atención: <strong> Dr. Juan
+                                        Pérez</strong></p>
+                                <p>Descripción: Detalles de atención médica o lo que se defina</p>
+                                <span class="float-end me-0">Ingreso: 08/08/2025</span>
+                            </div>
+                            <span class="badge text-bg-danger rounded-pill">14</span>
+                        </li>
+
+                        <li class="list-group-item d-flex justify-content-between align-items-start bg-danger-subtle">
+                            <div class="ms-2  w-100">
+                                <div class="fw-bold">APNEA SEVERA <span
+                                        class="badge text-bg-secondary rounded-pill">Finalizado</span></div>
+                                <p class="mb-0"><i class="fa fa-user-doctor me-2"></i>Última atención: <strong> Dr.
+                                        Pablo Bizzotto</strong></p>
+                                <p>Descripción: Detalles de atención médica o lo que se defina</p>
+                                <span class="float-end me-0">Ingreso: 03/05/2025 | Egreso: 08/05/2025</span>
+                            </div>
+                            <span class="badge text-bg-danger rounded-pill">5</span>
+                        </li>
+
+                        <li class="list-group-item d-flex justify-content-between align-items-start bg-primary-subtle">
+                            <div class="ms-2  w-100">
+                                <div class="fw-bold">CLINICA MÉDICA <span
+                                        class="badge text-bg-secondary rounded-pill">Finalizado</span></div>
+                                <p class="mb-0"><i class="fa fa-user-doctor me-2"></i>Última atención: <strong> Dr.
+                                        Magdalena Princz</strong></p>
+                                <p>Descripción: Detalles de atención médica o lo que se defina</p>
+                                <span class="float-end me-0">Ingreso: 12/03/2025 | Egreso: 12/03/2025</span>
+                            </div>
+                            <span class="badge text-bg-danger rounded-pill">1</span>
+                        </li>
+                    </ol>
+                </div>
+
+
+            </article>
+
+            <article class="card p-0 col-6 mb-2">
+                <div class="card-header bg-austral ">
+                    <h4 class="mb-0">ESTUDIOS</h4>
+                </div>
+                <div class="card-body flex-wrap d-flex" id="resEstudios">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Tipo</th>
+                                <th>Descripción</th>
+                                <th>Profesional</th>
+                                <th>Estado</th>
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01/01/2025</td>
+                                <td>Radiografía</td>
+                                <td>Radiografía de tórax</td>
+                                <td>Dr. Landa Diego</td>
+                                <td><span class="badge text-bg-success">Realizado</span></td>
+                                <td><button class="btn btn-secondary p-2"><i class="fa fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>15/02/2025</td>
+                                <td>Resonancia Magnética</td>
+                                <td>Resonancia de rodilla</td>
+                                <td>Dr. Chaza Reta</td>
+                                <td><span class="badge text-bg-warning">En Proceso</span></td>
+                                <td><button class="btn btn-secondary p-2"><i class="fa fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>20/03/2025</td>
+                                <td>Tomografía Computarizada</td>
+                                <td>Tomografía abdominal</td>
+                                <td>Dr. Calvo Damián</td>
+                                <td><span class="badge text-bg-danger">Cancelado</span></td>
+                                <td><button class="btn btn-secondary p-2"><i class="fa fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>25/04/2025</td>
+                                <td>Ultrasonido</td>
+                                <td>Ultrasonido abdominal</td>
+                                <td>Dr. Landa Diego</td>
+                                <td><span class="badge text-bg-warning">Programado</span></td>
+                                <td><button class="btn btn-secondary p-2"><i class="fa fa-eye"></i></button></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </article>
+
+            <article class="card p-0 col-md-6 mb-2">
+                <div class="card-header bg-austral ">
+                    <h4 class="mb-0">ANTECEDENTES</h4>
+                </div>
+                <section class="card-body flex-wrap d-flex" id="resEpisodios">
+                    <article class="card shadow-sm p-3 mb-4 w-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="text-muted small">
+                                <i class="fas fa-calendar-alt me-1"></i> 21/07/2025
+                            </div>
+                            <div class="text-muted small">
+                                <i class="fas fa-user-md me-1"></i> Dr. Pablo Bizzotto
+                            </div>
+                        </div>
+
+                        <div class="mb-2">
+                            <div class="text-secondary small fw-semibold">Motivo de consulta</div>
+                            <div class="fw-semibold">Dolor en el pecho</div>
+                        </div>
+
+                        <div class="mb-2">
+                            <div class="text-secondary small fw-semibold">Mensaje</div>
+                            <div>EKG y análisis de sangre han sido realizados. LDL en 110, indicando colesterol elevado.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="text-secondary small fw-semibold">Acción tomada</div>
+                            <div> Dosaje incrementado de estatinas de 10 mg a 20 mg. Cita de seguimiento programada en 4
+                                semanas.</div>
+                        </div>
+
+                        <a href="#" class="float-end text-primary fw-semibold small text-decoration-none">Ver detalles
+                        </a>
+                    </article>
+                    <article class="card shadow-sm p-3 w-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="text-muted small">
+                                <i class="fas fa-calendar-alt me-1"></i> 04/21/2024
+                            </div>
+                            <div class="text-muted small">
+                                <i class="fas fa-user-md me-1"></i> Dr. Pablo Bizzotto
+                            </div>
+                        </div>
+
+                        <div class="mb-2">
+                            <div class="text-secondary small fw-semibold">Motivo de consulta</div>
+                            <div class="fw-semibold">Dolor de cabeza crónico</div>
+                        </div>
+
+                        <div class="mb-2">
+                            <div class="text-secondary small fw-semibold">Mensaje</div>
+                            <div>Tomografía realizada. Resultados pendientes.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="text-secondary small fw-semibold">Acción tomada</div>
+                            <div> Se administró analgésico y se programó seguimiento en 4 semanas. Recomendación de
+                                evitar el estrés y mantener un diario de síntomas.</div>
+                        </div>
+
+                        <a href="#" class="float-end text-primary fw-semibold small text-decoration-none">Ver detalles
+                        </a>
+                    </article>
+
+                </section>
+            </article>
+
+            <article class="card p-0 col-md-6 mb-2">
+                <div class="card-header bg-austral ">
+                    <h4 class="mb-0">MEDICACIÓN HABITUAL</h4>
+                </div>
+                <div class="card-body flex-wrap d-flex" id="resEpisodios">
+                    <div class="card shadow-sm  mb-4 w-100">
+                        <div class="d-flex justify-content-between align-items-center mb-3 bg-primary-subtle p-2">
+                            <h6 class="mb-0 fw-semibold">MEDICAMENTOS ACTIVOS</h6>
+                            <a href="#" class="text-primary small text-decoration-none fw-semibold">Ver todo</a>
+                        </div>
+
+                        <!-- Medicamentos actuales -->
+                        <div class="px-4 mb-3">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <i class="fas fa-pills me-2 text-secondary"></i><strong>Lisinopril</strong>
+                                    <div class="text-muted small">20 mg, una vez al día, oral</div>
+                                </div>
+                                <div class="text-muted small">21/04/2024</div>
+                            </div>
+
+                            <div class="d-flex justify-content-between mt-3">
+                                <div>
+                                    <i class="fas fa-pills me-2 text-secondary"></i><strong>Metformina</strong>
+                                    <div class="text-muted small">500 mg, dos veces al día, oral</div>
+                                </div>
+                                <div class="text-muted small">16/04/2022</div>
+                            </div>
+
+                            <div class="d-flex justify-content-between mt-3">
+                                <div>
+                                    <i class="fas fa-pills me-2 text-secondary"></i><strong>Atorvastatina</strong>
+                                    <div class="text-muted small">40 mg, una vez al día, oral</div>
+                                </div>
+                                <div class="text-muted small">22/03/2022</div>
+                            </div>
+                        </div>
+
+                        <!-- Datos antiguos -->
+                        <div class="border-top pt-3">
+                            <div class="text-uppercase text-muted small mb-3 bg-primary-subtle p-2">Medicación suspendida</div>
+<section class="px-3">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <i class="fas fa-pills me-2 text-secondary"></i><strong>Albuterol</strong>
+                                    <div class="text-muted small">90 mcg por inhalación, según sea necesario (hasta 4
+                                        veces al día)</div>
+                                </div>
+                                <div class="text-muted small">18/02/2020</div>
+                            </div>
+
+                            <div class="d-flex justify-content-between mt-3">
+                                <div>
+                                    <i class="fas fa-pills me-2 text-secondary"></i><strong>Levotiroxina</strong>
+                                    <div class="text-muted small">75 mcg, una vez al día, oral</div>
+                                </div>
+                                <div class="text-muted small">30/01/2020</div>
+                            </div>
+                            </section>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+
+<!-- </body>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "></script>
+</body>
+
+</html> -->

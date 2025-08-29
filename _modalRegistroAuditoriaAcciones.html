@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../Content/v2/bootstrap.min.css">
+    <link rel="stylesheet" href="../../Content/fawesome-all.css">
+
+    <link rel="stylesheet" href="../../Content/SiteNew.css">
+    <title>Registro Auditoria Acciones</title>
+</head>
+
+<body>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRegistroAuditoriaAcciones">Abrir
+        Modal</button>
+    <section class="modal  active d-block" id="modalRegistroAuditoriaAcciones" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content shadow-lg">
+                <div class="modal-header">
+                    <h4 class="modal-title fs-5" id="staticBackdropLabel">Registro de Acciones</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <main class="modal-body p-0 pb-1">
+
+                    <section class="d-flex align-items-end justify-content-between p-4 bg-white" id="filtrosAuditoria">
+                        <div class="row">
+                            <div class="col-auto">
+                                <label for="fechaDesde" class="form-label">Fecha Desde</label>
+                                <input type="date" class="form-control" id="fechaDesde">
+                            </div>
+                            <div class="col-auto">
+                                <label for="fechaHasta" class="form-label">Fecha Hasta</label>
+                                <input type="date" class="form-control" id="fechaHasta">
+                            </div>
+
+                            <div class="col-auto">
+                                <label for="usuario" class="form-label">Paciente</label>
+                                <div class="input-group">
+                                    <input class="form-control" type="search" id="buscarPaciente">
+                                    <button class="btn btn-secondary" type="button" id="buscarPacienteBtn">
+                                        <i class="fa fa-search"></i>
+                                </div>
+                            </div>
+                            <div class="col-auto filtroProfesional">
+                                <label for="usuario" class="form-label">Profesional</label>
+                                <div class="input-group">
+                                    <input class="form-control" type="search" id="buscarProfesional">
+                                    <button class="btn btn-secondary" type="button" id="buscarProfesionalBtn">
+                                        <i class="fa fa-search"></i>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="d-flex  align-items-center">
+                            <button type="button" class="btn btn-primary btn-lg"><i
+                                    class="fa fa-filter me-2"></i>Filtrar</button>
+
+                            <div class="ms-2 form-check form-switch ">
+                                <input class="form-check-input" type="checkbox" role="switch" value=""
+                                    id="filtroProfesional" checked>
+                                <label class="form-check-label" for="rece">Mostrar filtro Profesional</label>
+                            </div>
+                        </div>
+
+
+
+                    </section>
+                    <hr>
+                    <section class="table-responsive position-relative overflow-y-auto" style="max-height: 60vh;">
+                        <table class="table table-striped table-hover p-4" id="tablaAuditoriaAcciones">
+                            <thead class="sticky-top">
+                                <tr class="text-uppercase">
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Paciente</th>
+                                    <th scope="col">Detalle de la acción</th>
+                                    <th scope="col">Ingreso</th>
+                                    <th scope="col">Estados</th>
+                                    <th scope="col" class="filtroProfesional">Profesional</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaAuditoria">
+                                <!-- 
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column align-items-center justify-content-center">
+                                            <span class="fecha sofiacond fw-bold">22/07/2025 </span>
+                                            <span class="hora">10:32 hs</span>
+                                        </div>
+                                    </td>
+                                    <td class="filtroPaciente">Juan Pérez</td>
+                                    <td>Consulta médica ambulatoria</td>
+                                    <td>Ambulatorio</td>
+                                    <td><span class="badge bg-success text-uppercase">Activo</span></td>
+                                    <td class="filtroProfesional">Magdalena Princz</td>
+                                    <td>
+                                        <div class="buttonAction">
+                                            <button class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></button>
+                                            <button class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                     <td>
+                                        <div class="d-flex flex-column align-items-center justify-content-center">
+                                            <span class="fecha sofiacond fw-bold">22/07/2025 </span>
+                                            <span class="hora">10:32 hs</span>
+                                        </div>
+                                    </td>
+                                    <td class="filtroPaciente">María López</td>
+                                    <td>Examen de laboratorio</td>
+                                    <td>Hospitalización</td>
+                                    <td><span class="badge text-uppercase text-bg-warning">Adendado</span></td>
+                                    <td class="filtroProfesional">Villavicencio Antonela</td>
+                                      <td>
+                                        <div class="buttonAction">
+                                            <button class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></button>
+                                            <button class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column align-items-center justify-content-center">
+                                            <span class="fecha sofiacond fw-bold">22/07/2025 </span>
+                                            <span class="hora">10:32 hs</span>
+                                        </div>
+                                    </td>
+                                    <td class="filtroPaciente">Carlos García</td>
+                                    <td>Consulta de seguimiento</td>
+                                    <td>Consulta Externa</td>
+                                    <td><span class="badge text-bg-danger text-uppercase">Anulado</span></td>
+                                    <td class="filtroProfesional">Guglieri Germán</td>
+                                    <td>
+                                        <div class="buttonAction">
+                                            <button class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></button>
+                                            <button class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></button>
+                                        </div>
+                                    </td>
+                                </tr> -->
+
+                            </tbody>
+                        </table>
+
+                    </section>
+
+
+                </main>
+                <div class="modal-footer d-none">
+                    <button type="button" class="btn btn-secondary d-none" data-bs-dismiss="modal"><i
+                            class="fa fa-xmark-circle me-2"></i>Descartar cambios</button>
+                    <button type="button" class="btn btn-primary"><i
+                            class="fa fa-check-circle me-2"></i>Guardar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const registrosAuditoria = [
+            {
+                fecha: "22/07/2025",
+                hora: "10:32 hs",
+                paciente: "Juan Pérez",
+                detalle: "Consulta médica ambulatoria",
+                ingreso: "Ambulatorio",
+                estado: "Activo",
+                profesional: "Magdalena Princz"
+            },
+            {
+                fecha: "22/07/2025",
+                hora: "11:10 hs",
+                paciente: "María López",
+                detalle: "Examen de laboratorio",
+                ingreso: "Hospitalización",
+                estado: "Adendado",
+                profesional: "Villavicencio Antonela"
+            },
+            {
+                fecha: "22/07/2025",
+                hora: "13:45 hs",
+                paciente: "Carlos García",
+                detalle: "Consulta de seguimiento",
+                ingreso: "Consulta Externa",
+                estado: "Anulado",
+                profesional: "Guglieri Germán"
+            },
+            {
+                fecha: "23/07/2025",
+                hora: "09:10 hs",
+                paciente: "Juan Pérez",
+                detalle: "Evaluación cardiológica",
+                ingreso: "Ambulatorio",
+                estado: "Activo",
+                profesional: "Villavicencio Antonela"
+            },
+            {
+                fecha: "23/07/2025",
+                hora: "11:55 hs",
+                paciente: "Sofía Torres",
+                detalle: "Control posoperatorio",
+                ingreso: "Hospitalización",
+                estado: "Adendado",
+                profesional: "Magdalena Princz"
+            },
+            {
+                fecha: "23/07/2025",
+                hora: "15:22 hs",
+                paciente: "María López",
+                detalle: "Consulta psicológica",
+                ingreso: "Consulta Externa",
+                estado: "Activo",
+                profesional: "Guglieri Germán"
+            },
+            {
+                fecha: "24/07/2025",
+                hora: "08:42 hs",
+                paciente: "Carlos García",
+                detalle: "Consulta neurológica",
+                ingreso: "Ambulatorio",
+                estado: "Anulado",
+                profesional: "Magdalena Princz"
+            },
+            {
+                fecha: "24/07/2025",
+                hora: "10:17 hs",
+                paciente: "Laura Díaz",
+                detalle: "Evaluación nutricional",
+                ingreso: "Consulta Externa",
+                estado: "Activo",
+                profesional: "Villavicencio Antonela"
+            },
+            {
+                fecha: "24/07/2025",
+                hora: "13:00 hs",
+                paciente: "Fernando Gómez",
+                detalle: "Control de rutina",
+                ingreso: "Ambulatorio",
+                estado: "Adendado",
+                profesional: "Guglieri Germán"
+            },
+            {
+                fecha: "24/07/2025",
+                hora: "14:30 hs",
+                paciente: "Juan Pérez",
+                detalle: "Electrocardiograma",
+                ingreso: "Ambulatorio",
+                estado: "Activo",
+                profesional: "Magdalena Princz"
+            },
+            {
+                fecha: "24/07/2025",
+                hora: "16:20 hs",
+                paciente: "Sofía Torres",
+                detalle: "Consulta ginecológica",
+                ingreso: "Consulta Externa",
+                estado: "Anulado",
+                profesional: "Guglieri Germán"
+            },
+            {
+                fecha: "25/07/2025",
+                hora: "09:15 hs",
+                paciente: "Carlos García",
+                detalle: "Consulta dermatológica",
+                ingreso: "Ambulatorio",
+                estado: "Activo",
+                profesional: "Villavicencio Antonela"
+            },
+            {
+                fecha: "25/07/2025",
+                hora: "11:40 hs",
+                paciente: "Laura Díaz",
+                detalle: "Estudio de imágenes",
+                ingreso: "Hospitalización",
+                estado: "Adendado",
+                profesional: "Magdalena Princz"
+            },
+            {
+                fecha: "25/07/2025",
+                hora: "14:05 hs",
+                paciente: "María López",
+                detalle: "Consulta de alergias",
+                ingreso: "Consulta Externa",
+                estado: "Activo",
+                profesional: "Villavicencio Antonela"
+            },
+            {
+                fecha: "25/07/2025",
+                hora: "16:40 hs",
+                paciente: "Fernando Gómez",
+                detalle: "Evaluación funcional",
+                ingreso: "Ambulatorio",
+                estado: "Anulado",
+                profesional: "Magdalena Princz"
+            }
+        ];
+
+        function renderizarTablaAuditoria(data) {
+            const tbody = document.getElementById('tablaAuditoria');
+            tbody.innerHTML = '';
+
+            data.forEach(registro => {
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+            <td>
+                <div class="d-flex flex-column align-items-center justify-content-center">
+                    <span class="fecha sofiacond fw-bold">${registro.fecha}</span>
+                    <span class="hora">${registro.hora}</span>
+                </div>
+            </td>
+            <td class="filtroPaciente">${registro.paciente}</td>
+            <td>${registro.detalle}</td>
+            <td>${registro.ingreso}</td>
+            <td><span class="badge text-uppercase ${getBadgeClass(registro.estado)}">${registro.estado}</span></td>
+            <td class="filtroProfesional">${registro.profesional}</td>
+            <td>
+                <div class="buttonAction">
+                    <button class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></button>
+                    <button class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></button>
+                </div>
+            </td>
+        `;
+                tbody.appendChild(fila);
+            });
+        }
+// cambio clase del badge según el estado
+        function getBadgeClass(estado) {
+            switch (estado.toLowerCase()) {
+                case 'activo': return 'bg-success';
+                case 'adendado': return 'text-bg-warning';
+                case 'anulado': return 'text-bg-danger';
+                default: return 'bg-secondary';
+            }
+        }
+
+        // Inicializar con los datos
+        renderizarTablaAuditoria(registrosAuditoria);
+
+    </script>
+
+
+    <script>
+        function toggleFiltroProfesional() {
+            const elementosFiltro = document.querySelectorAll('.filtroProfesional');
+            const elementosCols = document.querySelectorAll('#filtrosAuditoria .col-md-3');
+            const checkbox = document.getElementById('filtroProfesional');
+
+            // muestro elementos con .filtroProfesional
+            elementosFiltro.forEach(el => {
+                el.style.display = checkbox.checked ? '' : 'none';
+            });
+
+            // cambio tamaño columnas
+            elementosCols.forEach(col => {
+                if (checkbox.checked) {
+                    col.classList.add('col-md-2');
+                    col.classList.remove('col-md-3');
+                } else {
+                    col.classList.add('col-md-3');
+                    col.classList.remove('col-md-2');
+                }
+            });
+        }
+        document.getElementById('filtroProfesional').addEventListener('change', toggleFiltroProfesional);
+        toggleFiltroProfesional();
+
+        function filtrarTablaPorProfesional() {
+            const input = document.getElementById('buscarProfesional');
+            const filtro = input.value.toLowerCase();
+            const filas = document.querySelectorAll('#tablaAuditoriaAcciones tbody tr');
+
+            filas.forEach(fila => {
+                const celdaProfesional = fila.querySelector('td.filtroProfesional');
+                if (celdaProfesional) {
+                    const textoCelda = celdaProfesional.textContent.toLowerCase();
+                    fila.style.display = textoCelda.includes(filtro) ? '' : 'none';
+                }
+            });
+        }
+
+        document.getElementById('buscarProfesional').addEventListener('input', filtrarTablaPorProfesional);
+
+        function filtrarTablaPorPaciente() {
+            const input = document.getElementById('buscarPaciente');
+            const filtro = input.value.toLowerCase();
+            const filas = document.querySelectorAll('#tablaAuditoriaAcciones tbody tr');
+
+            filas.forEach(fila => {
+                const celdaPaciente = fila.querySelector('td.filtroPaciente');
+                if (celdaPaciente) {
+                    const textoCelda = celdaPaciente.textContent.toLowerCase();
+                    fila.style.display = textoCelda.includes(filtro) ? '' : 'none';
+                }
+            });
+        }
+        document.getElementById('buscarPaciente').addEventListener('input', filtrarTablaPorPaciente);
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "></script>
+</body>
+
+</html>

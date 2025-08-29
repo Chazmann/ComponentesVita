@@ -1,0 +1,74 @@
+[
+  {
+    "fecha": "2025-08-04T08:30:00",
+    "profesional": "Dr. Bizzotto Pablo",
+    "signos_vitales": {
+      "FC": 78,
+      "PA": "120/80",
+      "Temp": 36.7,
+      "FR": 16,
+      "SpO2": 98,
+      "GLC": 92
+    }
+  },
+  {
+    "fecha": "2025-08-03T14:15:00",
+    "profesional": "Enf. Villavicencio Antonella",
+    "signos_vitales": {
+      "FC": 84,
+      "PA": "130/85",
+      "Temp": 37.2,
+      "FR": 18,
+      "SpO2": 97,
+      "GLC": 104
+    }
+  },
+  {
+    "fecha": "2025-08-02T09:00:00",
+    "profesional": "Dr. Damián Calvo",
+    "signos_vitales": {
+      "FC": 72,
+      "PA": "115/75",
+      "Temp": 39.5,
+      "FR": 15,
+      "SpO2": 99,
+      "GLC": 88
+    }
+  },
+  {
+    "fecha": "2025-08-01T17:45:00",
+    "profesional": "Enf. Villavicencio Antonella",
+    "signos_vitales": {
+      "FC": 90,
+      "PA": "140/90",
+      "Temp": 37.8,
+      "FR": 20,
+      "SpO2": 95,
+      "GLC": 110
+    }
+  },
+  {
+    "fecha": "2025-07-31T11:00:00",
+    "profesional": "Dra. Magdalena Princz",
+    "signos_vitales": {
+      "FC": 76,
+      "PA": "125/82",
+      "Temp": 36.9,
+      "FR": 17,
+      "SpO2": 96,
+      "GLC": 99
+    }
+  },
+  {
+     "fecha": "2025-07-30T11:00:00",
+    "profesional": "Dra. Magdalena Princz",
+    "signos_vitales": {
+      "FC": 62,
+      "PA": "110/82",
+      "Temp": 36.0,
+      "FR": 22,
+      "SpO2": 90,
+      "GLC": 99
+    }
+  }
+]
