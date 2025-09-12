@@ -1,3 +1,4 @@
+
 const registrosSignosVitales = [
   {
     "fecha": "2025-08-04T08:30:00",

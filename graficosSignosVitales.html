@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
-
+max-height: 400px; overflow-y: auto;
 <body class="bg-ambulatorio">
     <header class="mbot  sticky-top ps-0 ms-0">
 
@@ -29,10 +29,12 @@
                 <button class="btn btn-secondary me-2" onclick="cargarVista('GsignosVitales.html', this)">Gráficos
                     Signos Vitales</button>
                 <button class="btn btn-secondary me-2" onclick="cargarVista('ResumenHC.html', this)">Resumen HC</button>
+                <button class="btn btn-secondary me-2" onclick="cargarVista('ResumenHCEmer.html', this)">Resumen HC
+                    EMERGENCIA</button>
                 <br>
                 <a class="btn btn-primary float-start w-auto" href="index.html">
-                        <i class="fa-solid fa-home me-2"></i>
-                        Volver a INDEX</a>
+                    <i class="fa-solid fa-home me-2"></i>
+                    Volver a INDEX</a>
             </div>
 
             <!-- Contenido principal -->
@@ -45,50 +47,7 @@
         © 2025 - Salud - Markey Healthcare Solutions | Versión: 0.5.1.3 - HOSPITAL UNIVERSITARIO AUSTRAL - piso uno
     </footer>
 
-    <script>
-        async function cargarVista(url, botonActivo = null) {
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error(`Error al cargar ${url}: ${response.statusText}`);
-                }
-                const html = await response.text();
-                const container = document.getElementById('dvContainer');
-                container.innerHTML = html;
-
-                // Gestionar el estado activo del botón (icono)
-                document.querySelectorAll('.btn.btn-secondary').forEach(btn => {
-                    const icono = btn.querySelector('.fa-arrow-right');
-                    if (icono) icono.remove();
-                });
-
-                if (botonActivo) {
-                    const icon = document.createElement('i');
-                    icon.className = 'fa fa-arrow-right me-2';
-                    botonActivo.prepend(icon);
-                }
-
-                // Si la vista cargada es la de los gráficos, se llama a su función de inicialización.
-                // Es necesario que el archivo 'graficarSignosVitales.js' exponga esta función.
-                if (url === 'GsignosVitales.html' && typeof initGraficosSignosVitales === 'function') {
-                    initGraficosSignosVitales();
-                }
-
-            } catch (error) {
-                console.error('Error:', error);
-                document.getElementById('dvContainer').innerHTML = `<p>No se pudo cargar el contenido de <strong>${url}</strong>.</p>`;
-            }
-        }
-
-        // Cargar SignosVitales.html por defecto al cargar la página
-        window.onload = function () {
-            const primerBoton = document.querySelector('button[onclick*="GsignosVitales.html"]');
-            cargarVista('GsignosVitales.html', primerBoton);
-        };
-    </script>
-
-
-
+    <script src="main.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap 5.3 JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
@@ -111,6 +70,7 @@
     <script
         src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
     <script src="graficarSignosVitales.js"></script>
+
 </body>
 
 </html>

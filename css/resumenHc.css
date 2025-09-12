@@ -1,0 +1,14 @@
+:root{
+    --maxCard:400px
+}
+
+#resEpisodios{
+    max-height: var(--maxCard); overflow-y: auto;
+}
+#listaEvoluciones{
+    max-height: calc(var(--maxCard) - 4em); overflow-y: auto;}
+#resumenHCEmergencias{
+
+    
+    box-sizing: border-box;
+}
