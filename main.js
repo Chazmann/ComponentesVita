@@ -74,7 +74,7 @@ function cargarPartialsResumenHCEmer() {
   }
 
   partials.forEach((file) => {
-    fetch(`Views/${file}`)
+    fetch(`./Views/${file}`)
       .then((response) => response.text())
       .then((html) => {
         const temp = document.createElement("div");
