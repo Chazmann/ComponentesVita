@@ -1,29 +1,32 @@
-@import url('./colores.css'); 
-@import url('./resumenHc.css');
+@import url('colores.css');
+@import url('resumen.css');
+@import url('v2/stepper.css');
+@import url('estilosTabs.css');
+
 @font-face {
     font-family: 'SofiaSemi';
     font-style: normal;
     font-weight: 1 1000;
-    src: url('.././css/fonts/SofiaSansSemiCondensed-VariableFont_wght.ttf') format('truetype');
+    src: url('fonts/sofia/sofiasanssemicondensed-variablefont_wght.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'sofiasanscondensed';
     font-style: normal;
     font-weight: 1 1000;
-    src: url('.././css/fonts/sofia/sofiasanscondensed-variablefont_wght.ttf') format('truetype');
+    src: url('fonts/sofia/sofiasanscondensed-variablefont_wght.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'sofiasansextra';
     font-style: normal;
     font-weight: 1 1000;
-    src: url('.././css/fonts/sofia/sofiasansextracondensed-variablefont_wght.ttf') format('truetype');
+    src: url('fonts/sofia/sofiasansextracondensed-variablefont_wght.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'sofiasans';
-    src: url('.././css/fonts/sofiasans-variablefont_wght.ttf') format('truetype');
+    src: url('fonts/sofiasans-variablefont_wght.ttf') format('truetype');
 }
 
 * {
@@ -45,6 +48,12 @@ html {
     --heading: "SofiaSemi", sans-serif;
     --header-gradient: linear-gradient(90deg, var(--main-bg-color) 60%, var(--main-bg-secondary-color) 100%) !important;
     --mx-height: calc(100dvh - 158px);
+    --h5: clamp(1rem, 1.6vw, 1.1rem) !important;
+    --h4: clamp(1.25rem, 2vw, 1.4rem) !important;
+    --h3: clamp(1.55rem, 2.6vw, 1.75rem) !important;
+    --h2: clamp(1.95rem, 3.4vw, 2.2rem) !important;
+    --h1: clamp(2.45rem, 4.2vw, 2.8rem) !important;
+    --h6: clamp(0.85rem, 1.25vw, 0.95rem) !important;
 }
 
 .sofiacond {
@@ -145,8 +154,8 @@ li:last-child.breadcrumb-item::before {
 /*TOOLBAR ALERTAS*/
 
 img.alerta-imagen {
-    height: 20px;
-    width: 20px;
+    height: 3.25em;
+    width: 3.25em;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
@@ -368,6 +377,10 @@ img.alerta-imagen-popup {
 
 .modal-md {
     max-width: 60% !important;
+}
+
+.modal-75 {
+    max-width: 75% !important;
 }
 
 .toolBarra {
@@ -686,10 +699,6 @@ textarea:hover {
     box-shadow: 0 3px 15px -7px rgba(0, 0, 0, 0.179);
 }
 
-/*input:checked {
-    background-color: var(--primarioAustral) !important;
-    color: var(--primarioAustral) !important;
-}*/
 
 /* -----COSAS PARA EL CHECKBOX DE CALENDARIO DE VACUNACIÓN---------- */
 .button_tag input[type="checkbox"] {
@@ -967,11 +976,6 @@ h2.accordion-header {
     --bs-nav-link-padding-x: .8rem;
 }
 
-/*.menulateral.expanded article[data-bs-toggle="tooltip"]::after {
-   display: none !important;
-    color:red;
-}*/
-
 
 .requerido {
     color: #ff0000;
@@ -1073,6 +1077,7 @@ h2.accordion-header {
 
 @media screen and (max-width: 1440px) {
 
+
     html {
         font-size: 13.5px !important;
     }
@@ -1089,7 +1094,10 @@ h2.accordion-header {
     #dvOrdenes.div-scroll-auto, #dvRecetas.div-scroll-auto {
         max-height: calc(var(--mx-height) - 1.5em);
     }
-
+    #tablaInternacion_wrapper .col-sm-12 {
+        overflow: hidden auto;
+        max-height: 60vh!important;
+    }
     .div-scroll {
         max-height: calc(var(--mx-height) - 2.2em);
     }
@@ -1124,154 +1132,6 @@ h2.accordion-header {
 
     input, .form-control {
         font-size: 1rem !important;
-    }
-}
-
-@media screen and (max-width: 1368px) {
-    :root {
-        --mx-height: calc(100dvh - 163px);
-        /*210*/
-    }
-
-    .div-scroll-auto {
-        max-height: calc(var(--mx-height) - 2.2em);
-    }
-
-    #dvOrdenes.div-scroll-auto {
-        max-height: calc(var(--mx-height) - 1em);
-    }
-
-    /*  .futer {
-        height: 10px;
-       
-    }*/
-
-    .main_container {
-        height: calc(100dvh - 320px) !important;
-    }
-
-    .salaEspera {
-        width: 40%;
-    }
-
-    h1, .h1 {
-        font-size: 2.20em !important;
-    }
-
-    h2, .h2 {
-        font-size: 1.65em !important;
-    }
-
-    h3, .h3 {
-        font-size: 1.45em !important;
-    }
-
-    h4, .h4, strong {
-        font-size: 1.2em !important;
-    }
-
-    h5, .h5, .btn-cerrar-hc, .hc-text i, input, .form-check-label, select .form-control, .text-med {
-        font-size: 1.05em !important;
-    }
-
-    body, h6, .h6, .dateRange, .form-check-label, #dvToolAlertaEtiquetas .col-auto {
-        font-size: 1rem !important;
-    }
-}
-
-@media screen and (max-width: 1281px) {
-    html {
-        font-size: 13.2px !important;
-    }
-
-    :root {
-        --mx-height: calc(100dvh - 160px);
-    }
-
-    .div-scroll-auto {
-        max-height: calc(var(--mx-height) - 1.2em);
-    }
-
-    .main_container {
-        height: calc(100dvh - 340px) !important;
-    }
-
-    .salaEspera {
-        width: 40%;
-    }
-
-
-    h1, .h1 {
-        font-size: 2.1em !important;
-    }
-
-    h2, .h2 {
-        font-size: 1.6em !important;
-    }
-
-    h3, .h3 {
-        font-size: 1.3em !important;
-    }
-
-    h4, .h4 {
-        font-size: 1.15em !important;
-    }
-
-    h5, .h5, .btn-cerrar-hc, .hc-text i, input, .form-check-label, select .form-control, .text-med {
-        font-size: 1em !important;
-    }
-
-    body, h6, .h6, #dvToolAlertaEtiquetas .col-auto {
-        font-size: .92rem !important;
-    }
-
-    .btn-wrap, .btn-column {
-        flex-wrap: wrap;
-        border-radius: 0 !important;
-    }
-
-    .btn-wrap {
-        overflow: hidden;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-
-    html {
-        font-size: 13px !important;
-    }
-
-    :root {
-        --mx-height: calc(100dvh - 160px);
-    }
-
-    .main_container {
-        height: calc(100dvh - 390px) !important;
-    }
-
-    .div-scroll-auto {
-        max-height: calc(var(--mx-height) - 1em);
-    }
-
-    .div-scroll {
-        max-height: calc(var(--mx-height) - 1em);
-    }
-
-    #dvOrdenes.div-scroll-auto, #dvRecetas.div-scroll-auto {
-        max-height: calc(var(--mx-height) - 1em);
-    }
-
-    body {
-        overflow-x: hidden !important;
-    }
-
-
-    .reporte {
-        display: none;
-    }
-
-    .salaEspera {
-        width: 45%;
     }
 }
 
@@ -1374,8 +1234,25 @@ h2.accordion-header {
     top: 2.3em;
     z-index: 1;
 }
-
-#tableOrdenes_wrapper .row:first-child, #table-recetas_wrapper .row:first-child {
+#tablaInternacion thead {
+    position: sticky;
+    top: 0!important;
+    z-index: 1;
+}
+#tablaInternacion_wrapper {padding:.25em;
+}
+    #tablaInternacion_wrapper .col-sm-12 {
+        overflow: hidden auto;
+        max-height: 70vh ;
+    }
+#tablaInternacion_wrapper .row .col-sm-12{
+    overflow: hidden auto;
+max-height: 70vh!important;    
+}
+#table-recetas_wrapper .row.dt-row .col-sm-12 {
+    min-height: 20vh;
+}
+    #tableOrdenes_wrapper .row:first-child, #table-recetas_wrapper .row:first-child {
     position: sticky;
     top: -1em !important;
     background-color: white !important;
@@ -1696,10 +1573,10 @@ h2.accordion-header {
     font-size: 1em !important
 }
 
-.modal-footer .btn {
+/*.modal-footer .btn {
     font-size: 1.2em !important;
     padding: .45em .75em .25em .65em;
-}
+}*/
 
 .btn-descartar {
     transition: all .15s ease-in;
@@ -1762,6 +1639,159 @@ h2.accordion-header {
 
 #dvMenuApp .grilla br {
     display: none;
+}
+
+@media screen and (max-width: 1368px) {
+    :root {
+        --mx-height: calc(100dvh - 163px);
+        /*210*/
+    }
+
+    .div-scroll-auto {
+        max-height: calc(var(--mx-height) - 2.2em);
+    }
+
+    #dvOrdenes.div-scroll-auto {
+        max-height: calc(var(--mx-height) - 1em);
+    }
+
+    #tablaInternacion_wrapper .col-sm-12 {
+        overflow: hidden auto;
+        max-height: 54vh !important;
+    }
+
+    /*  .futer {
+        height: 10px;
+       
+    }*/
+
+    .main_container {
+        height: calc(100dvh - 320px) !important;
+    }
+
+    .salaEspera {
+        width: 40%;
+    }
+
+    h1, .h1 {
+        font-size: 2.20em !important;
+    }
+
+    h2, .h2 {
+        font-size: 1.65em !important;
+    }
+
+    h3, .h3 {
+        font-size: 1.45em !important;
+    }
+
+    h4, .h4 {
+        font-size: 1.2em !important;
+    }
+
+    h5, .h5, .btn-cerrar-hc, .hc-text i, input, .form-check-label, select .form-control, .text-med, strong {
+        font-size: 1em !important;
+    }
+
+    body, h6, .h6, .dateRange, .form-check-label, #dvToolAlertaEtiquetas .col-auto {
+        font-size: 1rem !important;
+    }
+}
+
+@media screen and (max-width: 1281px) {
+    .form-control {
+        padding: .375rem 0.5rem;
+    }
+
+    :root {
+        --mx-height: calc(100dvh - 160px);
+    }
+
+    .div-scroll-auto {
+        max-height: calc(var(--mx-height) - 1.2em);
+    }
+
+    .main_container {
+        height: calc(100dvh - 340px) !important;
+    }
+
+    .salaEspera {
+        width: 40%;
+    }
+
+
+    h1, .h1 {
+        font-size: 2.1em !important;
+    }
+
+    h2, .h2 {
+        font-size: 1.6em !important;
+    }
+
+    h3, .h3 {
+        font-size: 1.3em !important;
+    }
+
+    h4, .h4 {
+        font-size: 1.15em !important;
+    }
+
+    h5, .h5, .btn-cerrar-hc, .hc-text i, input, .form-check-label, select .form-control, .text-med {
+        font-size: 1em !important;
+    }
+
+    body, h6, .h6, #dvToolAlertaEtiquetas .col-auto {
+        font-size: .92rem !important;
+    }
+
+    .btn-wrap, .btn-column {
+        flex-wrap: wrap;
+        border-radius: 0 !important;
+    }
+
+    .btn-wrap {
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    html {
+        font-size: 13px !important;
+    }
+
+    :root {
+        --mx-height: calc(100dvh - 160px);
+    }
+
+    .main_container {
+        height: calc(100dvh - 390px) !important;
+    }
+
+    .div-scroll-auto {
+        max-height: calc(var(--mx-height) - 1em);
+    }
+
+    .div-scroll {
+        max-height: calc(var(--mx-height) - 1em);
+    }
+
+    #dvOrdenes.div-scroll-auto, #dvRecetas.div-scroll-auto {
+        max-height: calc(var(--mx-height) - 1em);
+    }
+
+    body {
+        overflow-x: hidden !important;
+    }
+
+
+    .reporte {
+        display: none;
+    }
+
+    .salaEspera {
+        width: 45%;
+    }
 }
 
 /*div.dataTables_wrapper {
@@ -2088,7 +2118,7 @@ section.col-md-6.espera, section.col-md-6.evaluados {
 }
 
 .col-prof {
-    width: 20ch;
+    width: 11em;
     text-align: center;
     text-overflow: ellipsis !important;
     overflow: hidden;
@@ -2099,9 +2129,11 @@ section.col-md-6.espera, section.col-md-6.evaluados {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 11em;
 }
 
 .badgeDiagnostico {
+     
     border: solid 1px #39BCD1;
     color: black;
     display: inline-block;
@@ -2118,6 +2150,8 @@ section.col-md-6.espera, section.col-md-6.evaluados {
 }
 
 .badgeDiagToolbar {
+    display: block;
+    max-width: 28ch !important;
     background-color: #ffc107;
     color: black;
     text-wrap: nowrap !important;
@@ -2129,11 +2163,12 @@ section.col-md-6.espera, section.col-md-6.evaluados {
     border-radius: 2em;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
+    margin-right:.25em;
 }
 
 
 .accionesRapidas {
-    min-width: 8em;
+    width: 8em;
     gap: 0 !important;
 }
 
@@ -2175,13 +2210,7 @@ section.col-md-6.espera, section.col-md-6.evaluados {
     max-height: calc(100vh - 9em) !important
 }
 
-.borde-indicaciones {
-    border: solid 2px var(--primary) !important;
-    padding: .25em;
-    border-radius: 0 .5em .5em .5em;
-    background-color: white;
-    min-height: calc(var(--mx-height) - 4em);
-}
+
 
 .sbDemanda, .sbTriage {
     border: solid 0px var(--primary) !important;
@@ -2218,15 +2247,15 @@ section.col-md-6.espera, section.col-md-6.evaluados {
 #toolbarEmergencia {
     min-height: 4.5em;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
-    max-width: 32em;
+    width: clamp(30em, 50%, 30em);
     border: solid 1px var(--secondary-emer);
     border-radius: .5em;
     background: white;
-    padding: .15em .25em;
+    padding: .15em .75em !important;
     line-height: .9em;
-    flex-direction:column;
+    /*flex-direction:column;*/
 }
 
     #toolbarEmergencia .row {
@@ -2247,6 +2276,10 @@ section.col-md-6.espera, section.col-md-6.evaluados {
 
 }
 
+.botonDispositivos .dispositivosDrop {
+    min-width: 60em !important
+}
+
 .indFecha {
     display: flex;
     justify-content: space-between;
@@ -2262,7 +2295,7 @@ section.col-md-6.espera, section.col-md-6.evaluados {
     font-size: 1em !important;
 }
 
-#iFarma thead th, #iFarma tbody td, #tablaAuditoriaAcciones tbody td, #tablaAuditoriaAcciones thead th  {
+#iFarma thead th, #iFarma tbody td, #tablaAuditoriaAcciones tbody td, #tablaAuditoriaAcciones thead th {
     line-height: 1em !important;
     vertical-align: middle;
     text-align: center;
@@ -2307,15 +2340,15 @@ section.col-md-6.espera, section.col-md-6.evaluados {
 }
 
 .item-evolucion {
-    position:relative;
+    position: relative;
     padding: 3px 8px 4px 6px !important;
     border: solid 1px var(--secondary-300) !important;
     display: flex;
-   gap:.35em;
+    gap: .35em;
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 0 0 10px -7px #dce6f2;
-    height:fit-content!important;
+    height: fit-content !important;
 }
 
 .sub-item-evolucion {
@@ -2366,43 +2399,43 @@ section.col-md-6.espera, section.col-md-6.evaluados {
     transition: all 0.1s ease-in-out !important;
 }
 
-    /*:root {
+/*:root {
     --primary-emer: #c23a3c !important;
     --hover-emer: #D06263 !important;
     --bg-emer: #FFE5E6 !important;
 }*/
-    /* icono paciente  */
-    .ambito-emergencia > .image-paciente-default {
-        background-color: var(--primary-emer) !important;
-    }
+/* icono paciente  */
+.ambito-emergencia > .image-paciente-default {
+    background-color: var(--primary-emer) !important;
+}
 
-    /* nav float */
-    .ambito-emergencia.fab-container > .fab {
-        background-color: var(--primary-emer) !important;
-    }
+/* nav float */
+.ambito-emergencia.fab-container > .fab {
+    background-color: var(--primary-emer) !important;
+}
 
-    .ambito-emergencia.fab-container > .sub-button a {
-        background-color: var(--primary-emer) !important;
-    }
+.ambito-emergencia.fab-container > .sub-button a {
+    background-color: var(--primary-emer) !important;
+}
 
-    .ambito-emergencia.fab-container > .sub-button {
-        background-color: var(--primary-emer) !important;
-    }
+.ambito-emergencia.fab-container > .sub-button {
+    background-color: var(--primary-emer) !important;
+}
 
-    /* nav left */
+/* nav left */
 
-    /*.ambito-emergencia.nav-item {
+/*.ambito-emergencia.nav-item {
         margin-top: -2px !important;
         margin-bottom: 1px !important;*/
-    /*   background-color: indianred;*/
-    /*padding-left: 1px;
+/*   background-color: indianred;*/
+/*padding-left: 1px;
         padding-right: 4px;
         transition: all .15s ease-in-out!important;
         
     }*/
-    /*.ambito-emergencia.nav-item > .nav-link {*/
-    /*background-color: white;*/
-    /*margin-top: 2px !important;
+/*.ambito-emergencia.nav-item > .nav-link {*/
+/*background-color: white;*/
+/*margin-top: 2px !important;
             margin-bottom: 3px !important;
             color: var(--primary-emer);
             transition: all .15s ease-in-out !important;
@@ -2414,10 +2447,10 @@ section.col-md-6.espera, section.col-md-6.evaluados {
 
 
 
-    .ambito-emergencia.nav-item > .nav-link-active {
-        background-color: var(--primary-emer) !important;
-        color: white !important
-    }
+.ambito-emergencia.nav-item > .nav-link-active {
+    background-color: var(--primary-emer) !important;
+    color: white !important
+}
 
 .bg-emer .menulateral .nav-link-active:hover {
     background-color: var(--hover-emer) !important;
@@ -2426,19 +2459,19 @@ section.col-md-6.espera, section.col-md-6.evaluados {
 
 /*historial*/
 .idEpisodioContainer {
-    font-family:Consolas;
-    line-height:0;
-    font-size:.92em!important;
-    height:1em;/*
+    font-family: Consolas;
+    line-height: 0;
+    font-size: .92em !important;
+    height: 1em; /*
     background-color: red;*/
     position: absolute;
     padding: 0;
     transform: rotateZ(-90deg);
-    bottom:2.75em;
-    text-align:right;
+    bottom: -1.5em;
+    text-align: right;
     color: white;
-    left: -3.2em;
-    width:fit-content;
+    left: -3.5em;
+    width: 12ch;
 }
 
 .ambito-emergencia.card-grupo {
@@ -2452,7 +2485,7 @@ section.col-md-6.espera, section.col-md-6.evaluados {
 .br_ok {
     border-left: solid 1.25em var(--secondary-300) !important;
 }
-    
+
 .ambito-emergencia.item-evolucion {
     border: solid 1px var(--primary-emer) !important;
     border-left: solid 1.25em var(--primary-emer) !important;
@@ -2477,11 +2510,9 @@ section.col-md-6.espera, section.col-md-6.evaluados {
     }
 
 .badgeContador {
-    background-color: var(--hover-emer) !important;
     color: white;
-    border: solid 1px red;
     box-shadow: 0 0 10px gray;
-    /*padding: .4em .15em;*/
+    
     border-radius: 1em;
     text-align: center;
     min-width: 1.5em !important;
@@ -2857,35 +2888,44 @@ section.col-md-6.espera, section.col-md-6.evaluados {
     top: 0em !important;
     text-transform: uppercase !important;
 }
-/*-----ENFERMERIA----*/
 
-#planCuidadosTabs, #dvToobarLeftList {
-    border-bottom: solid 2px var(--primary);
+/*-----ORDENES RECETAS CERTIFICADOS-----*/
+
+/*#ordenesRecetasCertificadosTabs.nav-tabs {
+    border-bottom: solid 2px var(--primary-inter);
 }
 
-    #planCuidadosTabs .active, #dvNavegacion .active, #dvToobarLeftList .active {
-        background-color: var(--primary) !important;
+    #ordenesRecetasCertificadosTabs.nav-tabs .active {
+        background-color: var(--primary-inter) !important;
         color: white !important;
         font-weight: 700;
     }
 
-    #planCuidadosTabs .nav-link, #dvToobarLeftList .nav-link {
+    #ordenesRecetasCertificadosTabs.nav-tabs .nav-link {
         border-radius: .75em .75em 0 0;
-        border: solid 1px var(--primary-200);
-        border-bottom: 0;
-        color: var(--primary-400);
+        border: solid 1px var(--primary-inter);
+        border-bottom: solid 3px transparent;
+        color: var(--primary-inter);
+        transition: all .3s ease-in-out;
     }
 
-        #planCuidadosTabs .nav-link:hover, #dvToobarLeftList .nav-link:hover {
-            background-color: var(--primary-100);
-            color: var(--primary-600);
-            box-shadow: 0 -5px 12px var(--primary-100);
-            border-bottom: 0;
+        #ordenesRecetasCertificadosTabs.nav-tabs .nav-link:hover {
+            background-color: var(--bg-inter);
+            color: var(--primary-inter);*/
+            /*box-shadow: 0 -5px 12px var(--bg-inter);*/
+            /*border-bottom: solid 3px var(--primary-inter);
         }
-
+*/
+.orden-nav-tab {
+    
+       color: var(--secondary-inter);
+}
+.orden-nav-tab:hover {
+ color: var(--primary-inter);
+}
 .ind_tab {
     border: solid 1px var(--primary) !important;
-    border-radius: .75em .75em 0 0 !important;
+    border-radius: .25em .25em 0 0 !important;
     border-bottom: 0 !important;
     background-color: white !important;
     color: var(--primary) !important;
@@ -2906,8 +2946,10 @@ section.col-md-6.espera, section.col-md-6.evaluados {
 #dvNavegacion .nav-link {
     border: solid 1px var(--primary-400);
     border-width: 1px 0 1px 0;
-    color: var(--primary-400);
+    color: black;
     transition: all 0.3s ease-in-out;
+    text-transform: capitalize;
+    font-size: clamp(.8em, 1.09375vw + 2.5px,.95em);
 }
 
 #dvNavegacion li:first-child .nav-link {
@@ -2934,8 +2976,14 @@ section.col-md-6.espera, section.col-md-6.evaluados {
     flex-wrap: nowrap;
 }
 
-.flechaSV .badge {
-    color: dimgrey;
+.flechaSV {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.valoracion-ok.badge {
+    color: black !important;
 }
 
 .nav-link.planNavegacion .flechaSV .fa-angle-right {
@@ -3117,7 +3165,7 @@ li.renglon {
 }
 
 .col-signo h4 {
-    font-weight:900;
+    font-weight: 900;
     font-family: 'sofiasanscondensed' !important;
     font-size: clamp(0.75rem, 0.3429rem + 0.6543vw, 1.25rem) !important;
 }
@@ -3181,9 +3229,13 @@ li.renglon {
     text-align: center;
 }
 
-    .parametro span:first-child {
-        font-family: 'sofiasanscondensed';
+    .parametro p {
+        margin-bottom: 0 !important;
     }
+
+        .parametro p strong {
+            font-family: 'sofiasanscondensed';
+        }
 
 #parametrosSalud article {
     border-radius: .5em;
@@ -3203,7 +3255,7 @@ li.renglon {
         overflow-x: hidden !important;
     }*/
 
-    .tablaPlanEjecucion thead th, #tablaComparativaSignosVitales thead th {
+    .tablaPlanEjecucion thead th, #tablaComparativaSignosVitales thead th, #TuMovimientos thead th {
         background-color: var(--primarioAustral) !important;
         color: white !important;
     }
@@ -3233,28 +3285,43 @@ li.renglon {
 /*.estudio-pendientes {
     color: #ffd800
 }*/
-#EstudiosSolicitadosContainer button {
+
+.estudiosContainer.estudio-pendientes button {
     border: solid 1px #dbba03;
     color: #dbba03;
 }
 
-#EstudiosSolicitadosContainer .marca-title {
+.estudiosContainer.estudio-pendientes .marca-title {
     background-color: #dbba03;
     color: #000000
 }
 
-#EstudiosRealizadosContainer button {
-    border: solid 1px #ffd800;
+.estudiosContainer.estudio-completo button {
+    border: solid 1px #28a745;
+    color: #28a745
 }
 
-#EstudiosRealizadosContainer .marca-title {
-    background-color: #ffd800;
+.estudiosContainer.estudio-completo .marca-title {
+    background-color: #28a745;
     color: #000000
 }
 
 
+.estudiosContainer.estudio-informado button {
+    border: solid 1px #dd2222aa;
+    color: #dd2222aa
+}
+
+.estudiosContainer.estudio-informado .marca-title {
+    background-color: #dd2222aa;
+    color: #000000
+}
+
+.estudiosContainer button{
+    min-width:3.5ch!important
+}
 .estudio-completos {
-    color: #CBF07B
+    color: #28a745
 }
 
 
@@ -3262,6 +3329,9 @@ li.renglon {
     color: #ff6a00
 }
 
+.estudio-informado {
+    color: #dd2222aa
+}
 .botonera .btn-group-sm {
     display: flex !important;
     gap: .5em !important;
@@ -3302,21 +3372,25 @@ li.renglon {
     left: 0; /*nuevo*/
     border-right: solid 1px #7779; /*nuevo*/
 }
-.agrupadorEjecucion{
-  width:110vw;
-   position:relative;
+
+.agrupadorEjecucion {
+    width: 110vw;
+    position: relative;
 }
-.botoneraEjecucion{
-    padding-top:.5em
+
+.botoneraEjecucion {
+    padding-top: .5em
 }
+
 .titAgrupadorEjecucion {
-    width:30vw;
+    width: 30vw;
     background: linear-gradient(to right, white 40%, #fff0 100%);
     float: left;
     position: sticky;
     left: 0;
-    padding:0.25em
+    padding: 0.25em
 }
+
 .medAsoc b:last-child i {
     display: none;
 }
@@ -3344,7 +3418,7 @@ li.renglon {
             font-weight: 700;
         }
 
-#dvNavegacion{
+#dvNavegacion {
     overflow-y: auto;
     max-height: calc(var(--mx-height) - 4em);
 }
@@ -3354,34 +3428,1003 @@ li.renglon {
     border-left: solid 1px var(--gris);
     border-right: solid 1px var(--gris);
 }
+
 .headHistorico {
     --gris: #ccd;
     border-bottom: solid 1px var(--gris);
     padding-bottom: .25em;
 }
+
 .ch8 {
     width: 7ch !important;
 }
-.fcolumna{
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    align-items:end;
+
+.fcolumna {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: end;
 }
-.buttonAction{
+
+.buttonAction {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
 }
-.bg-austral{
+
+.bg-austral {
     background-color: var(--primarioAustral) !important;
     color: white !important;
 }
 
 #tablaComparativaSignosVitales td, #tablaComparativaSignosVitales th {
-     text-align: center;
-     vertical-align: middle ;
-    
+    text-align: center;
+    vertical-align: middle;
 }
+
+.tumoObservacion {
+    width: 100% !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita a 3 líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    background-color: transparent;
+}
+
+.tablaAgrupada tr th {
+    background-color: var(--main-bg-color) !important;
+    color: var(--main-text-color)
+}
+
+.hijotablamedicacion td {
+    background-color: var(--main-bg-secondary-color) !important;
+}
+
+.hijotablamedicacion thead tr th {
+    background-color: var(--bs-secondary-color) !important;
+    color: var(--main-text-color)
+}
+
+.hijotablamedicacion table {
+    box-shadow: 0 0 15px -5px gray;
+    border-radius: .75em .75em 0 0
+}
+
+.rotate-180 {
+    transition: all 0.2s ease-in-out;
+    transform: rotate(180deg);
+    transform-origin: center;
+}
+
+.botonIA-logo {
+    display: grid;
+    place-items: center;
+    height: 1.75em;
+    padding: 0 .5em;
+}
+
+#dispositivosDropBox {
+    overflow: hidden;
+    height: 18em !important;
+    box-shadow: 0 0 15px -3px gray;
+    width: 35em !important;
+}
+
+    #dispositivosDropBox .card-header {
+        display: none;
+    }
+
+    #dispositivosDropBox .modal-header {
+        color: var(--main-text-color);
+        background: var(--main-bg-color) !important;
+    }
+
+.estudiosContainer li.dropdown-item {
+    overflow: hidden;
+    max-width: 70vw;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+.botonDispositivos .dropdown {
+    height: 119% !important;
+ 
+}
+.botonDispositivos button {
+    height: 100% !important;
+    padding: .05em 1em;
+    border-radius:.5em;
+    border: solid .25em !important
+
+}
+
+
+
+.ambito-cirugia.card-grupo {
+    border: 1px solid var(--bg-cir) !important;
+}
+
+.ambito-cirugia.card-header {
+    border-bottom: 1px solid var(--bg-cir) !important;
+    background-color:var(--bg-cir);
+}
+
+.ambito-cirugia.item-evolucion {
+    border: 1px solid var(--primary-cir) !important;
+    border-left: 1.25em solid var(--primary-cir) !important;
+    background-color: transparent;
+}
+
+    .ambito-cirugia.item-evolucion span.badge {
+        border: 0px solid var(--bg-cir) !important;
+        background-color: white !important;
+        color: var(--bg-cir);
+        box-shadow: 0 0 12px -2px gray;
+    }
+
+    .ambito-cirugia.item-evolucion span.notificaciones-alert {
+        border: 1px solid var(--bg-cir) !important;
+        background-color: white !important;
+        color: var(--bg-cir);
+    }
+
+    .ambito-cirugia.item-evolucion:hover {
+        background-color: var(--hover-cir) !important;
+        color: white !important;
+    }
+
+.ambito-cirugia.item-activo {
+    background-color: var(--light-cir) !important;
+    color: black;
+}
+
+.ambito-cirugia.sub-item-evolucion {
+    border: 2px solid var(--bg-cir) !important;
+    border-left: 8px solid var(--bg-cir) !important;
+    transition: all .15s ease-in-out;
+    background-color: transparent !important;
+}
+
+    .ambito-cirugia.sub-item-evolucion:hover {
+        padding-top: .3em !important;
+        background-color: var(--hover-cir) !important;
+        color: white !important;
+    }
+
+        .ambito-cirugia.sub-item-evolucion:hover .fa-duotone {
+            color: white !important;
+        }
+.ambito-cirugia .fa-duotone{
+    color:var(--primary-cir)
+}
+.ambito-cirugia .siglaI {
+    left: .3em !important;
+    top: 0.2em;
+}
+
+.ambito-cirugia .siglaE {
+    left: .2em !important;
+    top: 0.1em;
+}
+
+.ambito-cirugia.sub-item-activo {
+    background-color: var(--light-cir) !important;
+}
+
+
+.bg-internacion.card-grupo {
+    border: 1px solid var(--bg-inter) !important;
+}
+
+.bg-internacion.card-header {
+    border-bottom: 1px solid var(--bg-inter) !important;
+}
+
+.bg-internacion.item-evolucion {
+    border: 1px solid var(--primary-inter) !important;
+    border-left: 1.25em solid var(--primary-inter) !important;
+}
+
+    .bg-internacion.item-evolucion span.badge {
+        border: 0px solid var(--bg-inter) !important;
+        background-color: white !important;
+        color: var(--bg-inter);
+        box-shadow: 0 0 12px -2px gray;
+    }
+
+    .bg-internacion.item-evolucion span.notificaciones-alert {
+        border: 1px solid var(--bg-inter) !important;
+        background-color: white !important;
+        color: var(--bg-inter);
+    }
+
+    .bg-internacion.item-evolucion:hover {
+        background-color: var(--hover-inter) !important;
+        color: white !important;
+    }
+
+.bg-internacion.item-activo {
+    background-color: var(--light-inter) !important;
+    color: black;
+}
+
+.bg-internacion.sub-item-evolucion {
+    border: 2px solid var(--bg-inter) !important;
+    border-left: 8px solid var(--bg-inter) !important;
+    transition: all .15s ease-in-out;
+    background-color: transparent !important;
+}
+
+    .bg-internacion.sub-item-evolucion:hover {
+        padding-top: .3em !important;
+        background-color: var(--hover-inter) !important;
+        color: white !important;
+    }
+
+        .bg-internacion.sub-item-evolucion:hover .fa-duotone {
+            color: white !important;
+        }
+
+.bg-internacion .siglaI {
+    left: .3em !important;
+    top: 0.2em;
+}
+
+.bg-internacion .siglaE {
+    left: .2em !important;
+    top: 0.1em;
+}
+
+.bg-internacion.sub-item-activo {
+    background-color: var(--light-inter) !important;
+}
+
+.bg-int-corta.card-grupo {
+    border: 1px solid var(--bg-int-corta) !important;
+}
+
+.ambito-int-corta.card-grupo {
+    border: 1px solid var(--bg-int-corta) !important;
+}
+
+.bg-int-corta.card-header {
+    border-bottom: 1px solid var(--bg-int-corta) !important;
+}
+
+.bg-int-corta.item-evolucion {
+    border: 1px solid var(--primary-int-corta) !important;
+    border-left: 1.25em solid var(--primary-int-corta) !important;
+}
+
+    .bg-int-corta.item-evolucion span.badge {
+        border: 0px solid var(--bg-int-corta) !important;
+        background-color: white !important;
+        color: var(--bg-int-corta);
+        box-shadow: 0 0 12px -2px gray;
+    }
+
+    .bg-int-corta.item-evolucion span.notificaciones-alert {
+        border: 1px solid var(--bg-int-corta) !important;
+        background-color: white !important;
+        color: var(--bg-int-corta);
+    }
+
+    .bg-int-corta.item-evolucion:hover {
+        background-color: var(--hover-int-corta) !important;
+        color: white !important;
+    }
+
+.bg-int-corta.item-activo {
+    background-color: var(--light-int-corta) !important;
+    color: black;
+}
+
+.bg-int-corta.sub-item-evolucion {
+    border: 2px solid var(--bg-int-corta) !important;
+    border-left: 8px solid var(--bg-int-corta) !important;
+    transition: all .15s ease-in-out;
+    background-color: transparent !important;
+}
+
+    .bg-int-corta.sub-item-evolucion:hover {
+        padding-top: .3em !important;
+        background-color: var(--hover-int-corta) !important;
+        color: white !important;
+    }
+
+        .bg-int-corta.sub-item-evolucion:hover .fa-duotone {
+            color: white !important;
+        }
+
+.bg-int-corta .siglaI {
+    left: .3em !important;
+    top: 0.2em;
+}
+
+.bg-int-corta .siglaE {
+    left: .2em !important;
+    top: 0.1em;
+}
+
+.bg-int-corta.sub-item-activo {
+    background-color: var(--light-int-corta) !important;
+}
+
+.ambito-emergencia.card-grupo {
+    border: solid 1px var(--primary-emer) !important;
+}
+
+.ambito-emergencia.card-header {
+    border-bottom: solid 1px var(--primary-emer) !important;
+}
+
+.br_ok {
+    border-left: solid 1.25em var(--secondary-300) !important;
+}
+
+.ambito-emergencia.item-evolucion {
+    border: solid 1px var(--primary-emer) !important;
+    border-left: solid 1.25em var(--primary-emer) !important;
+}
+
+    .ambito-emergencia.item-evolucion span.badge {
+        border: 0px solid var(--primary-emer) !important;
+        background-color: white !important;
+        color: red;
+        box-shadow: 0 0 12px -2px gray
+    }
+
+    .ambito-emergencia.item-evolucion span.notificaciones-alert {
+        border: 1px solid var(--primary-emer) !important;
+        background-color: white !important;
+        color: red;
+    }
+
+    .ambito-emergencia.item-evolucion:hover {
+        background-color: var(--hover-emer) !important;
+        color: white !important
+    }
+
+.ambito-emergencia.item-activo {
+    background-color: var(--light-emer) !important;
+    color: black;
+}
+
+.ambito-emergencia.sub-item-evolucion {
+    border: solid 2px #fbe2e2 !important;
+    border-left: solid 8px #fbe2e2 !important;
+    transition: all .15s ease-in-out;
+}
+
+    .ambito-emergencia.sub-item-evolucion:hover {
+        padding-top: .3em !important;
+        background-color: rgb(200, 104, 104) !important;
+        color: white;
+    }
+
+        .ambito-emergencia.sub-item-evolucion:hover .fa-duotone {
+            color: white !important;
+        }
+
+.ambito-emergencia .siglaI {
+    left: .3em !important;
+    top: 0.2em;
+}
+
+.ambito-emergencia .siglaE {
+    left: .2em !important;
+    top: 0.1em;
+}
+
+.ambito-emergencia.sub-item-activo {
+    background-color: rgb(214, 104, 104) !important
+}
+
+.br_ok {
+    border-left: solid 1.25em var(--secondary-300) !important;
+}
+
+/* Bordes resumen */
+.br_emer {
+    border-left: solid 1.25em var(--primary-emer) !important;
+}
+
+.br-Cir {
+    border-left: solid 1.25em var(--primary-cir) !important;
+}
+
+.br-Int {
+    border-left: solid 1.25em var(--primary-inter) !important;
+}
+
+.br-IntCorta {
+    border-left: solid 1.25em var(--primary-int-corta) !important;
+}
+
+/* Listas cuadradas */
+.ambito-emergencia.list-cuadrada > li:first-child {
+    border: none;
+}
+
+/* Card header exclusivo de emergencia en resumen/headers */
+.ambito-emergencia .card-header {
+    background-color: var(--light-emer) !important;
+}
+
+/* Sticky top para cabecera de emergencia */
+.ambito-emergencia .sticky-top.bg-white.shadow {
+    background-color: var(--primary-emer) !important;
+    color: white !important;
+}
+
+    .ambito-emergencia .sticky-top.bg-white.shadow * {
+        color: white !important;
+    }
+
+/* Botones en barras de herramientas específicos de emergencia */
+.ambito-emergencia .button {
+    color: white !important;
+}
+
+.ambito-emergencia .card-grupo-titulo .btn-primary {
+    background-color: var(--primary-emer);
+    color: white !important;
+}
+
+.ambito-emergencia .card-grupo-titulo .btn-secondary {
+    background-color: var(--secondary-emer);
+    color: white !important;
+}
+
+    .ambito-emergencia .card-grupo-titulo .btn-secondary:hover {
+        background-color: #f66c6c;
+        color: white !important;
+    }
+
+.ambito-emergencia .card-grupo-titulo .btn:hover {
+    box-shadow: 0 0 5px #7d4747;
+}
+
+.ambito-emergencia .card-grupo-titulo .btn-primary:active {
+    background-color: #eb1919;
+}
+
+.ambito-emergencia .card-grupo-titulo .btn-primary:hover {
+    background-color: #fe4040;
+}
+
+.ambito-emergencia .card-grupo-titulo .btn-secondary:active {
+    background-color: #c86161;
+}
+
+/* Layout */
+.ambito-emergencia.col-xs-10 {
+    padding-left: 0 !important;
+    border-radius: .5em;
+}
+
+.ambito-emergencia > .row {
+    background-color: white;
+    height: 100%;
+    padding-left: 0.75em !important;
+    margin-right: 0em;
+}
+
+.badgeContador {
+    box-shadow: 0 0 10px gray;
+    border-radius: 1em;
+    text-align: center;
+    min-width: 1.5em !important;
+    color:black;
+}
+
+.contenedorArticles {
+    padding-top:0.5em;
+    flex: 1 1 clamp(25em, 50%, 30em);
+    display: grid;
+    grid-template-columns: 56% 44%;
+    grid-template-rows: 1fr 1fr;
+    /*gap: .5em;*/
+}
+
+#dvAsociados {
+    border-radius:.5em;
+    width: calc(33.3% - 1em)!important;
+    border: solid 1px var(--primary)!important;
+}
+
+#contenedorVerInstructivo embed {
+    max-height: calc(100vh - 27.5rem)!important;
+}
+
+.txt-elli {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 5em;
+}
+
+
+
+.btn-alerta-badge {
+    width: 3em;
+    height: 3em;
+    padding: 0;
+}
+
+.celda1 .text-muted {
+    line-height:1em;
+    font-size: .8em;
+    margin:0!important;
+}
+#dvToobarLeftList.tabs-cirujano {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0em;
+    border: none;
+    padding: 0;
+    width:100%;
+    border-bottom: solid 2px var(--primary-400) !important;
+}
+
+    #dvToobarLeftList.tabs-cirujano button {
+        padding: .25em .5em;
+        text-align: center;
+        text-wrap: nowrap;
+        border-radius: .5em .5em 0 0;
+        border: solid 1px var(--primary-200);
+       border-bottom: solid 2px transparent;
+       flex: 0 0 26ch;
+    }
+    
+    #dvToobarLeftList.tabs-cirujano button.active {
+       background-color: var(--primary-400)!important;
+    }
+        #dvToobarLeftList.tabs-cirujano button:hover {
+            background-color: var(--primary-100) !important;
+            color: var(--primary-700) !important;
+        }
+.bg-cirugia #planCuidadosTabs{
+    border-bottom:0!important
+}
+
+/*------------------------plan de egreso---------------*/
+#reportePlanEgreso {
+    padding: 10px !important;
+    height: calc(var(--mx-height) - 16vh) !important;
+    border: solid 1px var(--primary);
+}
+    #reportePlanEgreso .embed-container {
+        width: 100%;
+        height: calc(var(--mx-height) - 24vh) !important;
+        border-radius: 0.25rem;
+        position: relative;
+    }
+.embed-container #reporteIframe {
+    width: 100%;
+    height:100%;
+    border: 0;
+    display: block;
+}
+
+#reporteIframe::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+#reporteIframe::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#reporteIframe::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+    #reporteIframe::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+.cardContainerInstrumentador{
+    width:100%;
+    padding-left:.5em;
+
+    .cell-selectable{
+                        width:100%
+                    }
+    .plantilla-propiedad div:first-child{
+        font-weight:bold;
+        text-transform:capitalize;
+    }
+}
+.cardContainerInstrumentador .card {
+    flex-direction: row !important;
+    width: 100% !important;
+    flex: 0 0 100% !important;
+}
+
+.cardContainerInstrumentador .card .card-header {
+  flex: 0 0 33%!important;
+  width:33%!important;
+  border-bottom:0;
+}
+
+    .cardContainerInstrumentador .card .card-body {
+        flex-direction: row !important;
+    }
+
+    .cardContainerInstrumentador .card-grupo-titulo{
+        font-size: var(--h4)!important;
+        font-weight: 700 !important;
+    }
+
+        .cardContainerInstrumentador .card-grupo-titulo .btn {
+            font-size: var(--h4) !important;
+            font-weight: 700 !important;
+        }
+
+.contEvolEnfermeria {
+    position:absolute;
+    max-width: 98.5%;
+
+    
+
+    #dvTabla{
+    width: 100%;
+    display: grid;
+    gap: 1em;
+    padding: .75em .25em;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+
+}
+#nroEpisodio {
+    font-size: 1.3em;
+    width: 2em;
+    height: 2em;
+    margin: 0 .25em 0 0 !important;
+    border: solid 1px var(--secondary-cir);
+    display: grid;
+    place-items: center;
+    border-radius: 2em;
+}
+
+
+.contEvolEnfermeria #_container_Evoluciones .card-body p{
+    word-break:break-all;
+    word-wrap:break-word;
+
+}
+.contEvolEnfermeria .container {
+width:100%;
+transition: all 0.3s ease-in-out;
+}
+    .contEvolEnfermeria .container:last-of-type {
+        border-radius: .5em;
+        background-color: transparent;
+        
+    }
+    .contEvolEnfermeria .container:hover {
+        box-shadow: 0 0 15px -4px gray;
+    }
+        .contEvolEnfermeria .container:last-of-type .card {
+        margin:0!important;
+    }
+
+.contEvolEnfermeria.tablaContainer {
+    max-height: 98%!important;
+    overflow:auto;
+}
+
+/*--------------PLAN EGRESO-------------*/
+.scrollable-list {
+    height: calc(var(--mx-height) - 13em) !important;
+    overflow: hidden auto!important;
+   
+}
+
+.smallF{
+    font-size:0.6em!important;
+}
+#tablaCirugia_wrapper .row:nth-child(2) .col-sm-12 {
+    overflow: hidden auto;
+    max-height: calc(100dvh - 14em);
+    transition: height 0.3s ease;
+}
+
+    #tablaCirugia_wrapper .row:nth-child(2) .col-sm-12.height-colapsado {
+        max-height: calc(100dvh - 34em) !important;
+    }
+
+#tablaCirugia tbody tr td {
+    height: 4em;
+    vertical-align: middle;
+}
+    #tablaCirugia tbody tr td:nth-child(-n+4) {
+        background-color: var(--secondary-cir);
+        color: white;
+    }
+
+#tablaCirugia tbody tr {
+    border: solid 3px var(--secondary-cir);
+    vertical-align: middle;
+}
+#tablaCirugia {
+    border-collapse: separate;
+    border-spacing: 0 6px;
+}
+    #tablaCirugia thead th {
+        border-top: 3px solid gray;
+        border-bottom: 3px solid gray;
+    }
+    #tablaCirugia thead th:first-child {
+        border-left: 3px solid gray;
+        border-radius: 6px 0 0 6px;
+    }
+
+    #tablaCirugia thead th:last-child {
+        border-right: 3px solid gray;
+        border-radius: 0 6px 6px 0;
+    }
+    #tablaCirugia tbody tr td:only-child {
+        font-size: 2em;
+        color: #6c757d;
+        background-color: #f8f9fa;
+        padding: .5em;
+        border-radius: 6px;
+    }
+
+    #tablaCirugia tbody td {
+        border-top: 3px solid var(--secondary-cir);
+        border-bottom: 3px solid var(--secondary-cir);
+    }
+
+        #tablaCirugia tbody td:first-child {
+            border-left: 3px solid var(--secondary-cir);
+            border-radius: 6px 0 0 6px;
+        }
+
+        #tablaCirugia tbody td:last-child {
+            border-right: 3px solid var(--secondary-cir);
+            border-radius: 0 6px 6px 0;
+        }
+
+ .buscarPaciente label{
+     display:none;
+ }
+.buscarPaciente .col-10 {
+    width:99%;
+}
+
+/*------sala internacion-------*/
+#tablaInternacion tbody tr td {
+    height: 4em;
+    vertical-align: middle;
+}
+
+    #tablaInternacion tbody tr td:nth-child(-n+4) {
+        background-color: var(--primary-inter);
+        color: white;
+    }
+
+#tablaInternacion tbody tr {
+    border: solid 3px var(--primary-inter);
+    vertical-align: middle;
+}
+
+#tablaInternacion {
+    border-collapse: separate;
+    border-spacing: 0 6px;
+}
+
+    #tablaInternacion thead th {
+        border-top: 3px solid gray;
+        border-bottom: 3px solid gray;
+    }
+
+        #tablaInternacion thead th:first-child {
+            border-left: 3px solid gray;
+            border-radius: 6px 0 0 6px;
+        }
+
+        #tablaInternacion thead th:last-child {
+            border-right: 3px solid gray;
+            border-radius: 0 6px 6px 0;
+        }
+
+    #tablaInternacion tbody tr td:only-child {
+        font-size: 2em;
+        color: #6c757d;
+        background-color: #f8f9fa;
+        padding: .5em;
+        border-radius: 6px;
+    }
+
+    #tablaInternacion tbody td {
+        border-top: 3px solid var(--primary-inter);
+        border-bottom: 3px solid var(--primary-inter);
+    }
+
+        #tablaInternacion tbody td:first-child {
+            border-left: 3px solid var(--primary-inter);
+            border-radius: 6px 0 0 6px;
+        }
+
+        #tablaInternacion tbody td:last-child {
+            border-right: 3px solid var(--primary-inter);
+            border-radius: 0 6px 6px 0;
+        }
+
+
+.select-ellipsis {
+    max-width: 12ch;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 22px;
+}
+.btn-grupo-pa {
+    position: absolute;
+    top: -45px;
+    right: 60px;
+}
+.btn-grupo-pa2 {
+    position: absolute;
+    top: -3.45em;
+    right:0;
+}
+@media screen and (max-width:1368px) {
+    .btn-grupo-pa2 {
+        position: absolute;
+        top: -3.5em;
+        right: 0;
+    }
+    .btn-grupo-pa {
+        position: absolute;
+        top: -43px;
+        right: 55px;
+    }
+}
+@media screen and (max-width:998px) {
+    .btn-grupo-pa2 {
+        position: absolute;
+        top: -43px;
+        right: 0;
+    }
+    .btn-grupo-pa {
+        position: absolute;
+        top: -41px;
+        right: 55px;
+    }
+}
+
+
+#dvMedicamentoComplementario .col-auto {
+    padding: .25em 0 !important;
+}
+
+#tablaInternacion_wrapper .row .col-sm-12 {
+    max-height: calc(100vh - 17em) !important;
+}
+@media screen and (max-width:1280px){
+    #tablaInternacion_wrapper .row .col-sm-12 {
+        max-height: calc(100vh - 20em) !important;
+    }
+
+}
+.mcw-container {
+    border-radius: 1.25em 1.25em .75em .75em !important;
+    transition: all 0.2s ease-in-out;
+}
+    .mcw-container.expanded{
+        
+        width:96vw!important;
+        height:78vh!important;
+        box-shadow:-2em 0 20em 10em #0004!important;
+    }
+.mcw-messages.expanded {
+    transition: all 0.2s ease-in-out;
+    max-height: 60vh !important;
+}
+
+    .modal-header.mcw-header {
+        border-radius: 1.25em 1.25em .0em .0em !important;
+        background: var(--main-bg-color) !important;
+    }
+medical-chat-widget {
+    --mcw-primary: var(--main-bg-color);
+    --mcw-secondary: #6c757d;
+    --mcw-font: 'Inter', system-ui, -apple-system, sans-serif;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 20;
+    border-radius: 1.25em 1.25em .75em .75em !important;
+}
+.boton-ia {
+    transform: scale(.9);
+    opacity: .6;
+    transition: all .15s ease-in-out;
+    border:solid 2px var(--main-bg-color);
+}
+
+    .boton-ia:hover, .boton-ia:focus {
+        border: solid 2px var(--main-bg-color);
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 1em -3px black;
+    }
+
+#dvVademecum{
+    position:absolute;
+    right:5px;
+    top:5px;
+}
+
+.bg-vita {
+    background: linear-gradient(45deg, var(--primary-inter) 15%, var(--primarioAustral)) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.firmar-resumen-alta{
+    position:fixed;
+    top:9.6em;
+    right:1em;
+}
+.btn-volver-certi {
+    margin-right: 13.75em;
+}
+@media screen and (max-width:1280px) {
+    .firmar-resumen-alta {
+        position: fixed;
+        top: 10.5em;
+        right: 2em;
+    }
+    .firmar-resumen-alta.orden-cir {
+           top: 10em!important;
+           }
+        .firmar-resumen-alta.plan-a {
+            top: 11em !important;
+        }
+    .btn-volver-certi {
+        margin-top:.15em;
+        margin-right: 14.25em;
+    }
+}
+
+/*----*/
+
+/* Modal alta probable */
+#modalAltaProbable #fechaAltaPicker {
+    width: 100%;
+}
+
+    #modalAltaProbable #fechaAltaPicker + .xdsoft_datetimepicker,
+    #modalAltaProbable .xdsoft_datetimepicker.xdsoft_inline {
+        width: 100% !important;
+        max-width: none !important;
+        box-sizing: border-box;
+    }
+
+        #modalAltaProbable #fechaAltaPicker + .xdsoft_datetimepicker .xdsoft_datepicker,
+        #modalAltaProbable .xdsoft_datetimepicker.xdsoft_inline .xdsoft_datepicker {
+            width: 100% !important;
+            margin-left: 0 !important;
+        }
+
+        #modalAltaProbable #fechaAltaPicker + .xdsoft_datetimepicker .xdsoft_calendar,
+        #modalAltaProbable .xdsoft_datetimepicker.xdsoft_inline .xdsoft_calendar {
+            width: 100% !important;
+        }
+
+            #modalAltaProbable #fechaAltaPicker + .xdsoft_datetimepicker .xdsoft_calendar table,
+            #modalAltaProbable .xdsoft_datetimepicker.xdsoft_inline .xdsoft_calendar table {
+                width: 100% !important;
+            }
 

@@ -27,13 +27,8 @@
     <main class="container-fluid">
         <div class="row">
             <!-- -----contenido de la barra lateral----- -->
-            <div class="col-2 h-100 d-grid text-center align-self-center">
-                <span class="col-12 h2 text-secondary d-grid text-center align-self-center">Menú Lateral</span>
-            </div>
-            <!-------contenido principal----- -->
-            <div class="col-10 bg-white overflow-y-auto" style="height: calc(100vh - 150px);">
-                <!-- ------disparador del modal------ -->
-                <section class="row p-2">
+            <div class="col-2 h-100">
+               <section class="row p-2 d-flex flex-column g-2">
                     <button class="btn btn-primary float-start w-auto" data-bs-toggle="modal"
                         data-bs-target="#nuevoModal">
                         <i class="fa-solid fa-message me-2"></i>
@@ -45,8 +40,15 @@
                             <a class="btn btn-primary float-start w-auto" href="graficosSignosVitales.html">
                             <i class="fa-solid fa-eye me-2"></i>
                             Ejemplo Gráficos Signos Vitales</a>
+                                  <a class="btn btn-primary float-start w-auto" href="filterRange.html">
+                            <i class="fa-solid fa-eye me-2"></i>
+                            NUEVO Filtro por Rango HC</a>
+                            
                 </section>
-                <hr>
+            </div>
+            <!-------contenido principal----- -->
+            <div class="col-10 bg-white overflow-y-auto" style="height: calc(100vh - 150px);">
+               
                 <!-- -------tabs de ejemplo------- -->
                 <div class="row p-2">
                     <!-- Nav tabs -->

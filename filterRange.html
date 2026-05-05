@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/SiteNew.css">
+    <link rel="stylesheet" href="css/hub.css">  
+
+    <style>
+        #yearChart {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #yearChart .bar {
+            width: 8px;
+            flex: 0 0 auto;
+            background: linear-gradient(to bottom, var(--bs-primary), var(--bs-teal));
+            opacity: 0.25;
+            transition: all 0.2s;
+        }
+
+        #yearChart .bar.active {
+            opacity: 1;
+        }
+
+        .noUi-connect {
+            background: var(--bs-primary);
+        }
+
+        .noUi-handle {
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid var(--bs-primary);
+            box-shadow: none;
+        }
+
+        .noUi-horizontal {
+            height: 12px;
+        }
+
+        .noUi-horizontal .noUi-handle {
+            width: 24px;
+            height: 24px;
+            right: -17px;
+            top: -6px;
+        }
+
+        .noUi-vertical {
+            width: 12px
+        }
+
+        .noUi-vertical .noUi-handle {
+            width: 24px;
+            height: 24px;
+            right: -6px;
+            bottom: -17px
+        }
+    </style>
+</head>
+
+<body>
+<header class="nav-markey"></header>
+<nav class="dvToolBarPacienteContainer bg-ambulatorio"></nav>
+<main class="row">
+<section class="col-2 bg-ambulatorio h-100"></section>
+<section class="col-10 h-100">
+    <div class="container-fluid p-2">
+       
+        <section class="row">
+            <div class="col-lg-2 col-md-3 px-0">
+                 <h4>Filtros HC</h4>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+
+                        <h6 class="fw-bold mb-3">Filtros HC</h6>
+
+                        <!-- Histograma -->
+                        <div id="yearChart" class="d-flex align-items-end gap-1 mb-3" style="height:120px;"></div>
+
+                        <!-- Slider -->
+                        <div id="yearSlider" class="mb-3"></div>
+
+                        <!-- Labels -->
+                        <div class="d-flex justify-content-between small text-muted">
+                            <span id="yearMin"></span>
+                            <span id="yearMax"></span>
+                        </div>
+
+                        <div class="mt-2">
+                            <strong>Seleccionado:</strong>
+                            <span id="yearRangeText"></span>
+                        </div>
+
+                    </div>
+                </div>
+
+            <div class="card shadow-sm" id="filtroEspecialidad"></div>
+            </div>
+            <div class="col-lg-3 col-md-4 overflow-x-hidden overflow-y-auto gap-2 d-flex flex-column"
+                id="contenedorCardsEvoluciones" style="max-height: calc(100vh - 180px);">
+                 <h4>Evoluciones</h4>
+                
+                <article class="ambito-emergencia item-evolucion br_ok spbt" onclick="loadEvolucion(3888,4, null, null, 'E')" data-index="4"
+                    data-bs-toggle="collapse" data-card-target="3888" data-bs-target="#dvItems3888">
+                    <div class="position-relative">
+                    </div>
+                    <div class="spbt position-relative">
+                        <h5 class="font-weight-bold elipsis">
+                            CLINICA MEDICA
+                        </h5>
+                        <div class="d-flex flex-column">
+                            <h5 class="m-0 camel">BIZZOTTO PABLO </h5>
+                            <div class="d-flex justify-content-between align-items-center soloEMER">
+                                <h5 class="m-0 camel mt-0"></h5>
+                                <span class="px-2 rounded-5 text-black bg-warning">Activo</span>
+                            </div>
+                            <article class="soloEMER fw-bold d-flex spbt2">
+
+                                <div class="fw-normal"><i
+                                        class="fa-duotone fa-solid fa-triangle-exclamation me-1 text-secondary"></i>Sin
+                                    Diagnóstico </div>
+
+                                <div class="fw-normal col-auto text-end">
+                                    <span class=" sofiacond">Ingreso: 20/12/24 </span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <span class="idEpisodioContainer">#4</span>
+                    <div class="spbt m-0">
+                        <div class="position-relative m-0">
+                            <h5 class="m-0 mt-2 float-end end-0 soloAMB"><span class="fecha">20/12/2024</span> 09:38</h5>
+                            <h5 class="float-start m-0 mt-2" style="color:crimson"></h5>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="item-evolucion br_ok spbt">
+                    <div class="position-relative"></div>
+                    <div class="spbt position-relative">
+                        <h5 class="font-weight-bold elipsis">CARDIOLOGÍA</h5>
+                        <div class="d-flex flex-column">
+                            <h5 class="m-0 camel">MARTÍNEZ RODRIGO</h5>
+                            <div class="d-flex justify-content-between align-items-center soloEMER">
+                                <h5 class="m-0 camel mt-0"></h5>
+                                <span class="px-2 rounded-5 text-black bg-warning">Activo</span>
+                            </div>
+                            <article class="soloEMER fw-bold d-flex spbt2">
+                                <div class="fw-normal"><i class="fa-solid fa-heart-pulse me-1 text-danger"></i>IC descompensada</div>
+                                <div class="fw-normal col-auto text-end"><span class="sofiacond">Ingreso: 14/03/26</span></div>
+                            </article>
+                        </div>
+                    </div>
+                    <span class="idEpisodioContainer">#12</span>
+                    <div class="spbt m-0">
+                        <div class="position-relative m-0">
+                            <h5 class="m-0 mt-2 float-end end-0 soloAMB"><span class="fecha">20/12/2026</span> 08:15</h5>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="item-evolucion br_ok spbt">
+                    <div class="position-relative"></div>
+                    <div class="spbt position-relative">
+                        <h5 class="font-weight-bold elipsis">TRAUMATOLOGÍA</h5>
+                        <div class="d-flex flex-column">
+                            <h5 class="m-0 camel">FERNÁNDEZ LAURA</h5>
+                            <article class="fw-bold d-flex spbt2">
+                                <div class="fw-normal"><i class="fa-solid fa-bone me-1 text-secondary"></i>Fx. radio distal</div>
+                                <div class="fw-normal col-auto text-end"><span class="sofiacond">Ingreso: 22/08/24</span></div>
+                            </article>
+                        </div>
+                    </div>
+                    <span class="idEpisodioContainer">#9</span>
+                    <div class="spbt m-0">
+                        <div class="position-relative m-0">
+                            <h5 class="m-0 mt-2 float-end end-0 soloAMB"><span class="fecha">22/08/2024</span> 14:30</h5>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="item-evolucion br_ok spbt">
+                    <div class="position-relative"></div>
+                    <div class="spbt position-relative">
+                        <h5 class="font-weight-bold elipsis">NEUROLOGÍA</h5>
+                        <div class="d-flex flex-column">
+                            <h5 class="m-0 camel">SUÁREZ MARCOS</h5>
+                            <article class="fw-bold d-flex spbt2">
+                                <div class="fw-normal"><i class="fa-solid fa-brain me-1 text-secondary"></i>Cefalea crónica</div>
+                                <div class="fw-normal col-auto text-end"><span class="sofiacond">Ingreso: 09/05/22</span></div>
+                            </article>
+                        </div>
+                    </div>
+                    <span class="idEpisodioContainer">#7</span>
+                    <div class="spbt m-0">
+                        <div class="position-relative m-0">
+                            <h5 class="m-0 mt-2 float-end end-0 soloAMB"><span class="fecha">09/05/2022</span> 10:00</h5>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="ambito-emergencia item-evolucion br_ok spbt">
+                    <div class="position-relative"></div>
+                    <div class="spbt position-relative">
+                        <h5 class="font-weight-bold elipsis">PEDIATRÍA</h5>
+                        <div class="d-flex flex-column">
+                            <h5 class="m-0 camel">ROMANO VALENTINA</h5>
+                            <article class="fw-bold d-flex spbt2">
+                                <div class="fw-normal"><i class="fa-solid fa-child me-1 text-secondary"></i>Control de crecimiento</div>
+                                <div class="fw-normal col-auto text-end"><span class="sofiacond">Ingreso: 17/11/19</span></div>
+                            </article>
+                        </div>
+                    </div>
+                    <span class="idEpisodioContainer">#5</span>
+                    <div class="spbt m-0">
+                        <div class="position-relative m-0">
+                            <h5 class="m-0 mt-2 float-end end-0 soloAMB"><span class="fecha">17/11/2019</span> 09:00</h5>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="ambito-emergencia item-evolucion br_ok spbt">
+                    <div class="position-relative"></div>
+                    <div class="spbt position-relative">
+                        <h5 class="font-weight-bold elipsis">GUARDIA GENERAL</h5>
+                        <div class="d-flex flex-column">
+                            <h5 class="m-0 camel">LÓPEZ CARLOS</h5>
+                            <div class="d-flex justify-content-between align-items-center soloEMER">
+                                <h5 class="m-0 camel mt-0"></h5>
+                                <span class="px-2 rounded-5 text-white bg-danger">Urgente</span>
+                            </div>
+                            <article class="soloEMER fw-bold d-flex spbt2">
+                                <div class="fw-normal"><i class="fa-solid fa-triangle-exclamation me-1 text-danger"></i>Dolor abdominal agudo</div>
+                                <div class="fw-normal col-auto text-end"><span class="sofiacond">Ingreso: 30/06/17</span></div>
+                            </article>
+                        </div>
+                    </div>
+                    <span class="idEpisodioContainer">#3</span>
+                    <div class="spbt m-0">
+                        <div class="position-relative m-0">
+                            <h5 class="m-0 mt-2 float-end end-0 soloAMB"><span class="fecha">30/06/2017</span> 02:45</h5>
+                        </div>
+                    </div>
+                </article>
+
+                <article class=" item-evolucion br_ok spbt">
+                    <div class="position-relative"></div>
+                    <div class="spbt position-relative">
+                        <h5 class="font-weight-bold elipsis">ONCOLOGÍA</h5>
+                        <div class="d-flex flex-column">
+                            <h5 class="m-0 camel">GIMÉNEZ PATRICIA</h5>
+                            <article class="fw-bold d-flex spbt2">
+                                <div class="fw-normal"><i class="fa-solid fa-ribbon me-1 text-secondary"></i>Seguimiento quimioterapia</div>
+                                <div class="fw-normal col-auto text-end"><span class="sofiacond">Ingreso: 12/04/12</span></div>
+                            </article>
+                        </div>
+                    </div>
+                    <span class="idEpisodioContainer">#2</span>
+                    <div class="spbt m-0">
+                        <div class="position-relative m-0">
+                            <h5 class="m-0 mt-2 float-end end-0 soloAMB"><span class="fecha">12/04/2012</span> 11:20</h5>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="item-evolucion br_ok spbt">
+                    <div class="position-relative"></div>
+                    <div class="spbt position-relative">
+                        <h5 class="font-weight-bold elipsis">DERMATOLOGÍA</h5>
+                        <div class="d-flex flex-column">
+                            <h5 class="m-0 camel">ACOSTA JULIANA</h5>
+                            <article class="fw-bold d-flex spbt2">
+                                <div class="fw-normal"><i class="fa-solid fa-sun me-1 text-secondary"></i>Psoriasis en placas</div>
+                                <div class="fw-normal col-auto text-end"><span class="sofiacond">Ingreso: 03/09/10</span></div>
+                            </article>
+                        </div>
+                    </div>
+                    <span class="idEpisodioContainer">#6</span>
+                    <div class="spbt m-0">
+                        <div class="position-relative m-0">
+                            <h5 class="m-0 mt-2 float-end end-0 soloAMB"><span class="fecha">03/09/2010</span> 15:00</h5>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="item-evolucion br_ok spbt">
+                    <div class="position-relative"></div>
+                    <div class="spbt position-relative">
+                        <h5 class="font-weight-bold elipsis">CIRUGÍA GENERAL</h5>
+                        <div class="d-flex flex-column">
+                            <h5 class="m-0 camel">BENÍTEZ SOFÍA</h5>
+                            <article class="fw-bold d-flex spbt2">
+                                <div class="fw-normal"><i class="fa-solid fa-scalpel me-1 text-secondary"></i>Post-op apendicectomía</div>
+                                <div class="fw-normal col-auto text-end"><span class="sofiacond">Ingreso: 28/01/05</span></div>
+                            </article>
+                        </div>
+                    </div>
+                    <span class="idEpisodioContainer">#1</span>
+                    <div class="spbt m-0">
+                        <div class="position-relative m-0">
+                            <h5 class="m-0 mt-2 float-end end-0 soloAMB"><span class="fecha">28/01/2005</span> 16:50</h5>
+                        </div>
+                    </div>
+                </article>
+
+            
+            </div>
+            <div class="col-lg-7 col-md-5">
+                <h4>Resultados en tablas</h4>
+                <table id="tabla" class="table table-striped w-100"></table>
+            </div>
+
+        </section>
+    </div>
+    </section>
+    </main>
+<footer class="futer"></footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+    <script>
+        const mockData = [];
+
+        function generarDatosMock() {
+            const nombres = ["Juan", "Ana", "Luis", "María", "Pedro", "Lucía"];
+            let id = 1;
+
+            for (let year = 2005; year <= 2026; year++) {
+                const cantidad = Math.floor(Math.random() * 15) + 3;
+
+                for (let i = 0; i < cantidad; i++) {
+                    mockData.push({
+                        id: id++,
+                        nombre: nombres[Math.floor(Math.random() * nombres.length)] + " " + id,
+                        anio: year
+                    });
+                }
+            }
+        }
+
+        generarDatosMock();
+
+        $(function () {
+            const STORAGE_KEY = "filtro_anios";
+
+            const yearData = [
+                { year: 2005, count: 2 },
+                { year: 2008, count: 4 },
+                { year: 2010, count: 3 },
+                { year: 2012, count: 5 },
+                { year: 2014, count: 6 },
+                { year: 2016, count: 7 },
+                { year: 2018, count: 8 },
+                { year: 2020, count: 10 },
+                { year: 2022, count: 12 },
+                { year: 2024, count: 11 },
+                { year: 2026, count: 5 }
+            ];
+
+            const years = yearData.map(x => x.year);
+            const min = Math.min(...years);
+            const max = Math.max(...years);
+
+            const maxValue = Math.max(...yearData.map(x => x.count));
+
+            yearData.forEach(x => {
+                const height = (x.count / maxValue) * 100;
+
+                $("#yearChart").append(`
+            <div class="bar"
+                 data-year="${x.year}"
+                 style="height:${height}%"
+                 title="${x.year} (${x.count})">
+            </div>
+        `);
+            });
+
+            $("#yearMin").text(min);
+            $("#yearMax").text(max);
+
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+
+            const slider = document.getElementById('yearSlider');
+
+            noUiSlider.create(slider, {
+                start: saved || [min, max],
+                connect: true,
+                step: 1,
+                range: { min: min, max: max },
+                tooltips: true,
+                format: {
+                    to: value => Math.round(value),
+                    from: value => Number(value)
+                }
+            });
+
+
+            const table = $("#tabla").DataTable({
+                processing: true,
+                serverSide: true,
+                language: {
+                    search: "Búsqueda global:",
+                    lengthMenu: "Mostrar _MENU_ registros",
+                    info: "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                    infoFiltered: "(filtrado de _MAX_ total registros)",
+                    processing: "Cargando...",
+                    paginate: {
+                        previous: '<i class="fa fa-angles-left"></i>',
+                        next: '<i class="fa fa-angles-right"></i>'
+                    }
+                },
+
+                ajax: function (data, callback) {
+
+                    const values = document.getElementById('yearSlider').noUiSlider.get();
+                    const desde = parseInt(values[0]);
+                    const hasta = parseInt(values[1]);
+
+                    let filtrados = mockData.filter(x =>
+                        x.anio >= desde && x.anio <= hasta
+                    );
+
+                    if (data.search.value) {
+                        filtrados = filtrados.filter(x =>
+                            x.nombre.toLowerCase().includes(data.search.value.toLowerCase())
+                        );
+                    }
+
+                    const total = filtrados.length;
+
+                    const paginados = filtrados.slice(data.start, data.start + data.length);
+
+                    callback({
+                        draw: data.draw,
+                        recordsTotal: mockData.length,
+                        recordsFiltered: total,
+                        data: paginados
+                    });
+                },
+
+                columns: [
+                    { data: "id", title: "ID" },
+                    { data: "nombre", title: "Nombre" },
+                    { data: "anio", title: "Año" }
+                ]
+            });
+
+            function debounce(fn, delay) {
+                let timer;
+                return function () {
+                    clearTimeout(timer);
+                    timer = setTimeout(fn, delay);
+                };
+            }
+
+            const reloadTable = debounce(() => {
+                table.ajax.reload(null, false);
+            }, 400);
+
+            function filtrarCards(from, to) {
+                $("#contenedorCardsEvoluciones .item-evolucion").each(function () {
+                    const textoFecha = $(this).find(".fecha").text().trim();
+                    const anio = parseInt(textoFecha.slice(-4));
+                    $(this).toggle(anio >= from && anio <= to);
+                });
+            }
+
+            slider.noUiSlider.on('update', function (values) {
+
+                const from = parseInt(values[0]);
+                const to = parseInt(values[1]);
+
+                $("#yearRangeText").text(`${from} - ${to}`);
+
+                localStorage.setItem(STORAGE_KEY, JSON.stringify([from, to]));
+
+                $(".bar").each(function () {
+                    const year = $(this).data("year");
+                    $(this).toggleClass("active", year >= from && year <= to);
+                });
+
+                filtrarCards(from, to);
+
+                reloadTable();
+            });
+
+        });
+    </script>
+</body>
+
+</html>

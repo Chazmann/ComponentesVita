@@ -1,4 +1,8 @@
 :root {
+    --main-bg-color: #1825AA;
+    --main-text-color: #eef3f6;
+    --main-bg-secondary-color: #eef3f6;
+    --header-gradient: linear-gradient(90deg, var(--main-bg-color) 60%, var(--main-bg-secondary-color) 100%) !important;
     --linearPrimarySecondary: linear-gradient(#2a3792, #eaf1fb);
     --linearPrimaryAccent: linear-gradient(#2a3792, #f59b5b);
     --linearSecondaryAccent: linear-gradient(#eaf1fb, #f59b5b);
@@ -13,14 +17,24 @@
     --primary: #2a3792;
     --secondary: #3a73cb;
     --accent: #f59b5b;
-    --primary-emer: #c23a3c !important;
-    --secondary-emer: #a44e4f !important;
-    --hover-emer: #D06263bb !important;
-    --light-emer: #FFE5E6 !important;
-    --bg-emer: #ffeeef !important;
-    --primary-inter: #25B431 !important;
-    --hover-inter: #70BC76 !important;
-    --bg-inter: #D2EBD4 !important;
+    /* === EMERGENCIA (RED) === */
+    --primary-emer: #C53436;
+    --secondary-emer: #BD5B5C;
+    --hover-emer: #DD8485;
+    --light-emer: #FFEEEF;
+    --bg-emer: #FFEEEF;
+    /* === INTERNACIÓN (GREEN) === */
+    --primary-inter: #2E6B2E;
+    --secondary-inter: #4F8E50;
+    --hover-inter: #77C87C;
+    --light-inter: #EAF7EC;
+    --bg-inter: #D9EEDC;
+    /* === CIRUGÍA (PURPLE) === */
+    --primary-cir: #7B4FB7;
+    --secondary-cir: #9C73CA;
+    --hover-cir: #C3A4E2;
+    --light-cir: #F4ECFB;
+    --bg-cir: #E7D5F5;
     /*-----shades de colores primarios, secundarios y acentos-----*/
     --text-50: #f2f2f2;
     --text-100: #e6e6e6;
@@ -100,7 +114,9 @@
 .bg-internacion {
     background-color: var(--bg-inter);
 }
-
+.bg-cirugia {
+    background-color: var(--bg-cir);
+}
 
 .modal .btn.btn-secondary, .btn-secondary, .form-group .btn-secondary {
     color: var(--secondary-100) !important;
@@ -240,8 +256,4 @@
 }
 .badge-primary {
     background-color: var(--primary-600);
-}
-.bg-austral{
-    background-color: var(--primarioAustral);
-    color:white;
 }
