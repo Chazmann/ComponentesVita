@@ -1,7 +1,7 @@
-@import url('colores.css');
-@import url('resumen.css');
-@import url('v2/stepper.css');
-@import url('estilosTabs.css');
+@import url('./colores.css');
+@import url('./resumen.css');
+@import url('./v2/stepper.css');
+@import url('./estilosTabs.css');
 
 @font-face {
     font-family: 'SofiaSemi';
