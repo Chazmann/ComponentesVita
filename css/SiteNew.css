@@ -7,7 +7,7 @@
     font-family: 'SofiaSemi';
     font-style: normal;
     font-weight: 1 1000;
-    src: url('./fonts/SofiaSans-VariableFont_wght.ttf'|) format('truetype');
+    src: url('./fonts/SofiaSans-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
