@@ -75,7 +75,7 @@
         height: calc(100dvh - 60px - 2em);
     }
 
-    .btn {
+    /* .btn {
         padding: 15px 30px;
         font-size: 3rem;
         color: #fff;
@@ -86,7 +86,7 @@
         backdrop-filter: blur(10px);
         transition: all 0.15s ease;    
     
-    }
+    } */
 
     .btn-admin {
         border-radius: 0 0.5em 0.5em 0;
