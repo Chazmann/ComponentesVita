@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/contenidoVariablesEntorno.css">
     <link rel="stylesheet" href="css/SiteNew.css">
     <link rel="stylesheet" href="css/estilosTabs.css">
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -28,34 +28,33 @@
         <div class="row">
             <!-- -----contenido de la barra lateral----- -->
             <div class="col-2 h-100">
-               <section class="row p-2 d-flex flex-column g-2">
-                           <a class="btn btn-primary w-auto active"  href="index.html">
-                            <i class="fa-solid fa-house me-2"></i>
-                            Inicio</a>
+                <section class="row p-2 d-flex flex-column g-2">
+                    <a class="btn btn-primary w-auto active" href="index.html">
+                        <i class="fa-solid fa-house me-2"></i>
+                        Inicio</a>
 
-                    <button class="btn btn-outline-primary  w-auto" data-bs-toggle="modal"
-                        data-bs-target="#nuevoModal">
+                    <button class="btn btn-outline-primary  w-auto" data-bs-toggle="modal" data-bs-target="#nuevoModal">
                         <i class="fa-solid fa-message me-2"></i>
                         MODAL
                         TRIGGER</button>
-                        <a class="btn btn-outline-primary  w-auto" href="TableSortDataTables.html">
-                            <i class="fa-solid fa-table me-2"></i>
-                            Ejemplo Tabla con DataTables</a>
-                            <a class="btn btn-outline-primary  w-auto" href="graficosSignosVitales.html">
-                            <i class="fa-solid fa-eye me-2"></i>
-                            Ejemplo Gráficos Signos Vitales</a>
-                                  <a class="btn btn-outline-primary  w-auto" href="filterRange.html">
-                            <i class="fa-solid fa-eye me-2"></i>
-                            NUEVO Filtro por Rango HC</a>
-                                    <a class="btn btn-outline-primary  w-auto" href="modals.html">
-                            <i class="fa-solid fa-message me-2"></i>
-                            Uso de Modals</a>
-                            
+                    <a class="btn btn-outline-primary  w-auto" href="TableSortDataTables.html">
+                        <i class="fa-solid fa-table me-2"></i>
+                        Ejemplo Tabla con DataTables</a>
+                    <a class="btn btn-outline-primary  w-auto" href="graficosSignosVitales.html">
+                        <i class="fa-solid fa-eye me-2"></i>
+                        Ejemplo Gráficos Signos Vitales</a>
+                    <a class="btn btn-outline-primary  w-auto" href="filterRange.html">
+                        <i class="fa-solid fa-eye me-2"></i>
+                        NUEVO Filtro por Rango HC</a>
+                    <a class="btn btn-outline-primary  w-auto" href="modals.html">
+                        <i class="fa-solid fa-message me-2"></i>
+                        Uso de Modals</a>
+
                 </section>
             </div>
             <!-------contenido principal----- -->
             <div class="col-10 bg-white overflow-y-auto" style="height: calc(100vh - 150px);" id="dvBody">
-               
+
                 <!-- -------tabs de ejemplo------- -->
                 <div class="row p-2">
                     <!-- Nav tabs -->
@@ -105,16 +104,15 @@
 
                 <!-- ---------contenido de ejemplo para la tabla------ -->
                 <h3>Tabla Ejemplo</h3>
-                <div
-                    class="alert alert-warning"
-                    role="alert" id="usoTablas"
-                >
+                <div class="alert alert-warning" role="alert" id="usoTablas">
                     <h4 class="alert-heading">Uso de tablas con DataTable</h4>
-                    <p>La tabla deberá contar con la clase <code>.tablaVita</code> para asignarle un encabezado de color (definido por variables de entorno)</p>
+                    <p>La tabla deberá contar con la clase <code>.tablaVita</code> para asignarle un encabezado de color
+                        (definido por variables de entorno)</p>
                     <hr />
-                    <p class="mb-0">La etiqueta <code>thead</code> deberá tener además las clases <code>.sticky-top</code> para permitir visualizar el encabezado al hacer scroll</p>
+                    <p class="mb-0">La etiqueta <code>thead</code> deberá tener además las clases
+                        <code>.sticky-top</code> para permitir visualizar el encabezado al hacer scroll</p>
                 </div>
-                       
+
                 <section class="row p-2">
                     <table class="table table-striped table-hover table-sm tablaVita acciones">
                         <thead>
@@ -224,19 +222,19 @@
                 <hr>
                 <!-- ---------contenido de ejemplo para la Formularios------ -->
                 <h3>Formularios Ejemplo</h3>
-                       <div
-                    class="alert alert-warning"
-                    role="alert" id="usoTabla"
-                >
+                <div class="alert alert-warning" role="alert" id="usoTabla">
                     <h4 class="alert-heading">Uso de formularios</h4>
-                    <p>Los formularios estarán compuestos de la siguiente manera 
+                    <p>Los formularios estarán compuestos de la siguiente manera
                         <code>
-                            &lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;, &lt;input class="input-group"&gt;
-                        </code>
-                    
+                            &lt;input class="form-control borde-boton"&gt;, &lt;select class="form-control borde-boton"&gt;, &lt;textarea class="form-control borde-boton"&gt;</code>
                     </p>
-                    <hr />
-                    <p class="mb-0">La etiqueta <code>thead</code> deberá tener además las clases <code>.sticky-top</code> para permitir visualizar el encabezado al hacer scroll</p>
+                    <p> Se utilizará <code>&lt;div class="input-group"&gt; 
+                        </code>
+                        cuando se desee acompañar el campo con un <code>&lt;label class="form-label"&gt;</code>
+                    </p>
+
+
+
                 </div>
                 <section class="row p-2">
                     <form class="col-3">
@@ -328,7 +326,8 @@
                         <h5>Librería <b>flatpickr</b></h5>
                         <div class="container-fluid">
                             <div class="mb-3">
-                                <label for="flatpickr-datetime" class="form-label flatpickr">Seleccionar Fecha y Hora</label>
+                                <label for="flatpickr-datetime" class="form-label flatpickr">Seleccionar Fecha y
+                                    Hora</label>
                                 <input type="text" class="form-control" id="flatpickr-datetime">
                             </div>
                         </div>
@@ -336,7 +335,7 @@
                     <!-- ---------contenido de ejemplo para componente PAGINADOR------ -->
                     <div class="col">
                         <h3>Paginado</h3>
-                        <p>Siempre se ubicará en la parte inferior y alineado a la derecha del contenedor padre</p>
+                        <p class="alert alert-warning">Siempre se ubicará en la parte inferior y alineado a la derecha del contenedor padre</p>
                         <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-end">
                                 <li class="page-item disabled">
